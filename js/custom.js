@@ -1,26 +1,3 @@
-// * SIDEBAR MENU
-// * ------------
-// * This is a custom plugin for the sidebar menu. It provides a tree view.
-// * 
-// * Usage:
-// * $(".sidebar).tree();
-// * 
-// * Note: This plugin does not accept any options. Instead, it only requires a class
-// *       added to the element that contains a sub-menu.
-// *       
-// * When used with the sidebar, for example, it would look something like this:
-// * <ul class='sidebar-menu'>
-// *      <li class="treeview active">
-// *          <a href="#>Menu</a>
-// *          <ul class='treeview-menu'>
-// *              <li class='active'><a href=#>Level 1</a></li>
-// *          </ul>
-// *      </li>
-// * </ul>
-// * 
-// * Add .active class to <li> elements if you want the menu to be open automatically
-// * on page load. See above for an example.
-// */
 (function ($) {
     "use strict";
 
@@ -167,7 +144,7 @@ $('#form_produtos').bootstrapValidator({
     // Get the BootstrapValidator instance
     var bv = $form.data('bootstrapValidator');
 
-    // Use AjaxLab to submit form data
+    // Use AjaxProduto to submit form data
     /*
      $.post($form.attr('action'), $form.serialize(), function(result) {
      // ... Process the result ...
@@ -178,7 +155,7 @@ $('#form_produtos').bootstrapValidator({
 
     $.ajax({
         type: "POST",
-        url: "AjaxLab/saveItem",
+        url: "AjaxProduto/saveItem",
         data: dados,
         success: function (data) {
             $(data).add
@@ -239,7 +216,7 @@ $('#form_atualiza_prod').bootstrapValidator({
 
     $.ajax({
         type: "POST",
-        url: "AjaxLab/atualizaItem",
+        url: "AjaxProduto/atualizaItem",
         data: dados,
         dataType: 'json',
         success: function (data) {
@@ -255,7 +232,7 @@ $('#form_atualiza_prod').bootstrapValidator({
             $('#form_atualiza_prod input[name=preco]').val('');
             $('#form_atualiza_prod input[name=saldo_estoque]').val('');
 
-            $('#atualizaModalLabel').html('<span class="text-success"><i class="fa fa-check"></i> Produto atualizado!</span>')
+            $('#atualizaModalLabel').html('<span class="text-warning"><i class="fa fa-check"></i> Produto atualizado!</span>')
                 .fadeIn();
 
             $form.parents('#atualizaItemModal').modal('hide');
@@ -272,7 +249,7 @@ $('#form_apaga_prod')
 
         $.ajax({
             type: "POST",
-            url: "AjaxLab/removeItem",
+            url: "AjaxProduto/removeItem",
             data: dados,
             dataType: 'json',
             success: function (data) {
@@ -294,7 +271,7 @@ $('#produtos').delegate('.update_prod', 'click', function () {
 
     $.ajax({
         type: "GET",
-        url: "AjaxLab/findItem?id_produto=" + id,
+        url: "AjaxProduto/findItem?id_produto=" + id,
         data: $(this).serialize(),
         dataType: 'json',
         success: function (data) {
@@ -318,7 +295,7 @@ $('#produtos').delegate('.delete_prod', 'click', function () {
 
     $.ajax({
         type: "GET",
-        url: "AjaxLab/findItem?id_produto=" + id,
+        url: "AjaxProduto/findItem?id_produto=" + id,
         data: $(this).serialize(),
         dataType: 'json',
         success: function (data) {

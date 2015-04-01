@@ -1,23 +1,23 @@
 <?php
 
-class AjaxLab extends Controller
+class AjaxProduto extends Controller
 {
 
     public function start()
     {
         $this->dados = array(
-            'pagetitle' => 'AjaxLab Testando',
+            'pagetitle' => '',
             'pagesubtitle' => '',
-            'resultado' => (new AjaxLabModel())->getProds()
+            'resultado' => (new AjaxProdutoModel())->getProds()
         );
 
-        $this->view = new View('AjaxLab', 'start');
+        $this->view = new View('AjaxProduto', 'start');
         $this->view->output($this->dados);
     }
 
     public function saveItem()
     {
-        $this->model = new AjaxLabModel();
+        $this->model = new AjaxProdutoModel();
         $return = $this->model->gravarItem();
         echo "<li class=\"list-group-item\" data-li_item=\"{$return['id_produto']}\">
                 <span id=\"prod_{$return['id_produto']}\">
@@ -30,7 +30,7 @@ class AjaxLab extends Controller
 
     public function atualizaItem()
     {
-        $this->model = new AjaxLabModel();
+        $this->model = new AjaxProdutoModel();
         $return = $this->model->updateItem();
 
         echo json_encode($return);
@@ -38,7 +38,7 @@ class AjaxLab extends Controller
 
     public function removeItem()
     {
-        $this->model = new AjaxLabModel();
+        $this->model = new AjaxProdutoModel();
         $return = $this->model->deleteItem();
 
         echo json_encode($return);
@@ -50,7 +50,7 @@ class AjaxLab extends Controller
 
         $id = $_GET['id_produto'];
 
-        $this->model = new AjaxLabModel();
+        $this->model = new AjaxProdutoModel();
         $obj = $this->model->getById($id);
 
         $return = $obj->first();

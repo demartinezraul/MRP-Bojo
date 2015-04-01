@@ -1,6 +1,6 @@
 <?php
 
-class AjaxLabModel extends Model
+class AjaxProdutoModel extends Model
 {
 
     public function gravarItem()
@@ -66,7 +66,7 @@ class AjaxLabModel extends Model
     {
         $this->db->select(
             'id_produto, descricao, cor, saldo_estoque,
-                to_char(preco,\'"R$"999G999G990D99\') as preco',
+                to_char(preco,\' - "  R$"999G999G990D99\') as preco',
             'tb_produto',null, null, null, 'id_produto'
         );
         return $this->db->getResultado();

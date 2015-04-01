@@ -2307,7 +2307,7 @@
 	
 	
 	/**
-	 * Create an AjaxLab call based on the table's settings, taking into account that
+	 * Create an AjaxProduto call based on the table's settings, taking into account that
 	 * parameters can have multiple forms, and backwards compatibility.
 	 *
 	 * @param {object} oSettings dataTables settings object
@@ -2389,7 +2389,7 @@
 					log( oSettings, 0, 'Invalid JSON response', 1 );
 				}
 				else if ( xhr.readyState === 4 ) {
-					log( oSettings, 0, 'AjaxLab error', 7 );
+					log( oSettings, 0, 'AjaxProduto error', 7 );
 				}
 	
 				_fnProcessingDisplay( oSettings, false );
@@ -2438,7 +2438,7 @@
 	
 	
 	/**
-	 * Update the table using an AjaxLab call
+	 * Update the table using an AjaxProduto call
 	 *  @param {object} settings dataTables settings object
 	 *  @returns {boolean} Block the table drawing or not
 	 *  @memberof DataTable#oApi
@@ -3198,7 +3198,7 @@
 	
 		// If there is default sorting required - let's do it. The sort function
 		// will do the drawing for us. Otherwise we draw the table regardless of the
-		// AjaxLab source - this allows the table to look initialised for AjaxLab sourcing
+		// AjaxProduto source - this allows the table to look initialised for AjaxProduto sourcing
 		// data (show 'loading' message possibly)
 		_fnReDraw( settings );
 	
@@ -3237,7 +3237,7 @@
 	/**
 	 * Draw the table for the first time, adding all required features
 	 *  @param {object} oSettings dataTables settings object
-	 *  @param {object} [json] JSON from the server that completed the table, if using AjaxLab source
+	 *  @param {object} [json] JSON from the server that completed the table, if using AjaxProduto source
 	 *    with client-side processing (optional)
 	 *  @memberof DataTable#oApi
 	 */
@@ -3245,7 +3245,7 @@
 	{
 		settings._bInitComplete = true;
 	
-		// On an AjaxLab load we now have data and therefore want to apply the column
+		// On an AjaxProduto load we now have data and therefore want to apply the column
 		// sizing
 		if ( json ) {
 			_fnAdjustColumnSizing( settings );
@@ -5295,7 +5295,7 @@
 		 * Add a single new row or multiple rows of data to the table. Please note
 		 * that this is suitable for client-side processing only - if you are using
 		 * server-side processing (i.e. "bServerSide": true), then to add data, you
-		 * must add it to the data source, i.e. the server-side, through an AjaxLab call.
+		 * must add it to the data source, i.e. the server-side, through an AjaxProduto call.
 		 *  @param {array|object} data The data to be added to the table. This can be:
 		 *    <ul>
 		 *      <li>1D array of data - add a single row with the data provided</li>
@@ -5393,7 +5393,7 @@
 		 *    $(document).ready(function() {
 		 *      var oTable = $('#example').dataTable();
 		 *
-		 *      // Immediately 'nuke' the current rows (perhaps waiting for an AjaxLab callback...)
+		 *      // Immediately 'nuke' the current rows (perhaps waiting for an AjaxProduto callback...)
 		 *      oTable.fnClearTable();
 		 *    } );
 		 */
@@ -6178,9 +6178,9 @@
 			/* Language definitions */
 			if ( oInit.oLanguage.sUrl !== "" )
 			{
-				/* Get the language definitions from a file - because this AjaxLab call makes the language
+				/* Get the language definitions from a file - because this AjaxProduto call makes the language
 				 * get async to the remainder of this function we use bInitHandedOff to indicate that
-				 * _fnInitialise will be fired by the returned AjaxLab handler, rather than the constructor
+				 * _fnInitialise will be fired by the returned AjaxProduto handler, rather than the constructor
 				 */
 				oSettings.oLanguage.sUrl = oInit.oLanguage.sUrl;
 				$.getJSON( oSettings.oLanguage.sUrl, null, function( json ) {
@@ -6394,9 +6394,9 @@
 			}
 			else if ( oSettings.bDeferLoading || _fnDataSource( oSettings ) == 'dom' )
 			{
-				/* Grab the data from the page - only do this when deferred loading or no AjaxLab
+				/* Grab the data from the page - only do this when deferred loading or no AjaxProduto
 				 * source since there is no point in reading the DOM data if we are then going
-				 * to replace it with AjaxLab data
+				 * to replace it with AjaxProduto data
 				 */
 				_fnAddTr( oSettings, $(oSettings.nTBody).children('tr') );
 			}
@@ -7278,7 +7278,7 @@
 	
 	
 	/**
-	 * Get the JSON response from the last AjaxLab request that DataTables made to the
+	 * Get the JSON response from the last AjaxProduto request that DataTables made to the
 	 * server. Note that this returns the JSON from the first table in the current
 	 * context.
 	 *
@@ -7296,7 +7296,7 @@
 	
 	
 	/**
-	 * Get the data submitted in the last AjaxLab request
+	 * Get the data submitted in the last AjaxProduto request
 	 */
 	_api_register( 'ajax.params()', function () {
 		var ctx = this.context;
@@ -7310,7 +7310,7 @@
 	
 	
 	/**
-	 * Reload tables from the AjaxLab data source. Note that this function will
+	 * Reload tables from the AjaxProduto data source. Note that this function will
 	 * automatically re-draw the table when the remote data has been loaded.
 	 *
 	 * @param {boolean} [reset=true] Reset (default) or hold the current paging
@@ -7326,12 +7326,12 @@
 	
 	
 	/**
-	 * Get the current AjaxLab URL. Note that this returns the URL from the first
+	 * Get the current AjaxProduto URL. Note that this returns the URL from the first
 	 * table in the current context.
 	 *
-	 * @return {string} Current AjaxLab source URL
+	 * @return {string} Current AjaxProduto source URL
 	 *//**
-	 * Set the AjaxLab URL. Note that this will set the URL for all tables in the
+	 * Set the AjaxProduto URL. Note that this will set the URL for all tables in the
 	 * current context.
 	 *
 	 * @param {string} url URL to set.
@@ -7370,7 +7370,7 @@
 	
 	
 	/**
-	 * Load data from the newly set AjaxLab URL. Note that this method is only
+	 * Load data from the newly set AjaxProduto URL. Note that this method is only
 	 * available when `ajax.url()` is used to set a URL. Additionally, this method
 	 * has the same effect as calling `ajax.reload()` but is provided for
 	 * convenience when setting a new URL. Like `ajax.reload()` it will
@@ -9126,7 +9126,7 @@
 		"_bAttrSrc": false,
 	
 		/**
-		 * Developer definable function that is called whenever a cell is created (AjaxLab source,
+		 * Developer definable function that is called whenever a cell is created (AjaxProduto source,
 		 * etc) or processed for input (DOM source). This can be used as a compliment to mRender
 		 * allowing you to modify the DOM element (add background colour for example) when the
 		 * element is available.
@@ -9318,7 +9318,7 @@
 		 * An array of data to use for the table, passed in at initialisation which
 		 * will be used in preference to any data which is already in the DOM. This is
 		 * particularly useful for constructing tables purely in Javascript, for
-		 * example with a custom AjaxLab call.
+		 * example with a custom AjaxProduto call.
 		 *  @type array
 		 *  @default null
 		 *
@@ -9431,7 +9431,7 @@
 	
 		/**
 		 * DataTables can be instructed to load data to display in the table from a
-		 * AjaxLab source. This option defines how that AjaxLab call is made and where to.
+		 * AjaxProduto source. This option defines how that AjaxProduto call is made and where to.
 		 *
 		 * The `ajax` property has three different modes of operation, depending on
 		 * how it is defined. These are:
@@ -9451,7 +9451,7 @@
 		 *
 		 * As an object, the parameters in the object are passed to
 		 * [jQuery.ajax](http://api.jquery.com/jQuery.ajax/) allowing fine control
-		 * of the AjaxLab request. DataTables has a number of default parameters which
+		 * of the AjaxProduto request. DataTables has a number of default parameters which
 		 * you can override using this option. Please refer to the jQuery
 		 * documentation for a full description of the options available, although
 		 * the following parameters provide additional options in DataTables or
@@ -9468,7 +9468,7 @@
 		 *
 		 * * `dataSrc` - By default DataTables will look for the property `data` (or
 		 *   `aaData` for compatibility with DataTables 1.9-) when obtaining data
-		 *   from an AjaxLab source or for server-side processing - this parameter
+		 *   from an AjaxProduto source or for server-side processing - this parameter
 		 *   allows that property to be changed. You can use Javascript dotted
 		 *   object notation to get a data source for multiple levels of nesting, or
 		 *   it my be used as a function. As a function it takes a single parameter,
@@ -9484,9 +9484,9 @@
 		 * `function`
 		 * ----------
 		 *
-		 * As a function, making the AjaxLab call is left up to yourself allowing
-		 * complete control of the AjaxLab request. Indeed, if desired, a method other
-		 * than AjaxLab could be used to obtain the required data, such as Web storage
+		 * As a function, making the AjaxProduto call is left up to yourself allowing
+		 * complete control of the AjaxProduto request. Indeed, if desired, a method other
+		 * than AjaxProduto could be used to obtain the required data, such as Web storage
 		 * or an AIR database.
 		 *
 		 * The function is given four parameters and no return is required. The
@@ -9508,14 +9508,14 @@
 		 *  @since 1.10.0
 		 *
 		 * @example
-		 *   // Get JSON data from a file via AjaxLab.
+		 *   // Get JSON data from a file via AjaxProduto.
 		 *   // Note DataTables expects data in the form `{ data: [ ...data... ] }` by default).
 		 *   $('#example').dataTable( {
 		 *     "ajax": "data.json"
 		 *   } );
 		 *
 		 * @example
-		 *   // Get JSON data from a file via AjaxLab, using `dataSrc` to change
+		 *   // Get JSON data from a file via AjaxProduto, using `dataSrc` to change
 		 *   // `data` to `tableData` (i.e. `{ tableData: [ ...data... ] }`)
 		 *   $('#example').dataTable( {
 		 *     "ajax": {
@@ -9525,7 +9525,7 @@
 		 *   } );
 		 *
 		 * @example
-		 *   // Get JSON data from a file via AjaxLab, using `dataSrc` to read data
+		 *   // Get JSON data from a file via AjaxProduto, using `dataSrc` to read data
 		 *   // from a plain array rather than an array in an object
 		 *   $('#example').dataTable( {
 		 *     "ajax": {
@@ -9718,7 +9718,7 @@
 	
 		/**
 		 * Deferred rendering can provide DataTables with a huge speed boost when you
-		 * are using an AjaxLab or JS data source for the table. This option, when set to
+		 * are using an AjaxProduto or JS data source for the table. This option, when set to
 		 * true, will cause DataTables to defer the creation of the table elements for
 		 * each row until they are needed for a draw - saving a significant amount of
 		 * time.
@@ -10258,7 +10258,7 @@
 		 *  @type function
 		 *  @param {object} settings DataTables settings object
 		 *  @param {object} json The JSON object request from the server - only
-		 *    present if client-side AjaxLab sourced data is used
+		 *    present if client-side AjaxProduto sourced data is used
 		 *
 		 *  @dtopt Callbacks
 		 *  @name DataTable.defaults.initComplete
@@ -10360,7 +10360,7 @@
 		 * __Deprecated__ The functionality provided by this parameter has now been
 		 * superseded by that provided through `ajax`, which should be used instead.
 		 *
-		 *  It is often useful to send extra data to the server when making an AjaxLab
+		 *  It is often useful to send extra data to the server when making an AjaxProduto
 		 * request - for example custom filtering information, and this callback
 		 * function makes it trivial to send extra information to the server. The
 		 * passed in parameter is the data set that has been constructed by
@@ -10368,7 +10368,7 @@
 		 *  @type function
 		 *  @param {array} data Data array (array of objects which are name/value
 		 *    pairs) that has been constructed by DataTables and will be sent to the
-		 *    server. In the case of AjaxLab sourced data with server-side processing
+		 *    server. In the case of AjaxProduto sourced data with server-side processing
 		 *    this will be an empty array, for server-side processing there will be a
 		 *    significant number of parameters!
 		 *  @returns {undefined} Ensure that you modify the data array passed in,
@@ -10402,7 +10402,7 @@
 		 *        "stateLoadCallback": function (settings) {
 		 *          var o;
 		 *
-		 *          // Send an AjaxLab request to the server to get the data. Note that
+		 *          // Send an AjaxProduto request to the server to get the data. Note that
 		 *          // this is a synchronous request.
 		 *          $.ajax( {
 		 *            "url": "/state_load",
@@ -10508,7 +10508,7 @@
 		 *      $('#example').dataTable( {
 		 *        "stateSave": true,
 		 *        "stateSaveCallback": function (settings, data) {
-		 *          // Send an AjaxLab request to the server with the state object
+		 *          // Send an AjaxProduto request to the server with the state object
 		 *          $.ajax( {
 		 *            "url": "/state_save",
 		 *            "data": data,
@@ -11075,11 +11075,11 @@
 	
 	
 			/**
-			 * When using AjaxLab sourced data and during the first draw when DataTables is
+			 * When using AjaxProduto sourced data and during the first draw when DataTables is
 			 * gathering the data, this message is shown in an empty row in the table to
 			 * indicate to the end user the the data is being loaded. Note that this
 			 * parameter is not used when loading data by server-side processing, just
-			 * AjaxLab sourced data with client-side processing.
+			 * AjaxProduto sourced data with client-side processing.
 			 *  @type string
 			 *  @default Loading...
 			 *
@@ -11242,7 +11242,7 @@
 		 * superseded by that provided through `ajax`, which should be used instead.
 		 *
 		 * By default DataTables will look for the property `data` (or `aaData` for
-		 * compatibility with DataTables 1.9-) when obtaining data from an AjaxLab
+		 * compatibility with DataTables 1.9-) when obtaining data from an AjaxProduto
 		 * source or for server-side processing - this parameter allows that
 		 * property to be changed. You can use Javascript dotted object notation to
 		 * get a data source for multiple levels of nesting.
@@ -11435,8 +11435,8 @@
 		 * __Deprecated__ The functionality provided by this parameter has now been
 		 * superseded by that provided through `ajax`, which should be used instead.
 		 *
-		 * Set the HTTP method that is used to make the AjaxLab call for server-side
-		 * processing or AjaxLab sourced data.
+		 * Set the HTTP method that is used to make the AjaxProduto call for server-side
+		 * processing or AjaxProduto sourced data.
 		 *  @type string
 		 *  @default GET
 		 *
@@ -11662,7 +11662,7 @@
 	
 	
 		/**
-		 * Developer definable function that is called whenever a cell is created (AjaxLab source,
+		 * Developer definable function that is called whenever a cell is created (AjaxProduto source,
 		 * etc) or processed for input (DOM source). This can be used as a compliment to mRender
 		 * allowing you to modify the DOM element (add background colour for example) when the
 		 * element is available.
@@ -12377,7 +12377,7 @@
 			/**
 			 * Delay the creation of TR and TD elements until they are actually
 			 * needed by a driven page draw. This can give a significant speed
-			 * increase for AjaxLab source and Javascript source data, but makes no
+			 * increase for AjaxProduto source and Javascript source data, but makes no
 			 * difference at all fro DOM and server-side processing tables.
 			 * Note that this parameter will be set by the initialisation routine. To
 			 * set a default use {@link DataTable.defaults}.
@@ -12424,7 +12424,7 @@
 	
 			/**
 			 * Processing indicator enable flag whenever DataTables is enacting a
-			 * user request - typically an AjaxLab request for server-side processing.
+			 * user request - typically an AjaxProduto request for server-side processing.
 			 * Note that this parameter will be set by the initialisation routine. To
 			 * set a default use {@link DataTable.defaults}.
 			 *  @type boolean
@@ -12943,14 +12943,14 @@
 		"jqXHR": null,
 	
 		/**
-		 * JSON returned from the server in the last AjaxLab request
+		 * JSON returned from the server in the last AjaxProduto request
 		 *  @type object
 		 *  @default undefined
 		 */
 		"json": undefined,
 	
 		/**
-		 * Data submitted as part of the last AjaxLab request
+		 * Data submitted as part of the last AjaxProduto request
 		 *  @type object
 		 *  @default undefined
 		 */
@@ -12965,7 +12965,7 @@
 		"fnServerData": null,
 	
 		/**
-		 * Functions which are called prior to sending an AjaxLab request so extra
+		 * Functions which are called prior to sending an AjaxProduto request so extra
 		 * parameters can easily be sent to the server
 		 *  @type array
 		 *  @default []
@@ -13007,7 +13007,7 @@
 		"iDraw": 0,
 	
 		/**
-		 * Indicate if a redraw is being done - useful for AjaxLab
+		 * Indicate if a redraw is being done - useful for AjaxProduto
 		 *  @type boolean
 		 *  @default false
 		 */
@@ -14491,13 +14491,13 @@
 
 	/**
 	 * DataTables initialisation complete event, fired when the table is fully
-	 * drawn, including AjaxLab data loaded, if AjaxLab data is required.
+	 * drawn, including AjaxProduto data loaded, if AjaxProduto data is required.
 	 *  @name DataTable#init.dt
 	 *  @event
 	 *  @param {event} e jQuery event object
 	 *  @param {object} oSettings DataTables settings object
 	 *  @param {object} json The JSON object request from the server - only
-	 *    present if client-side AjaxLab sourced data is used</li></ol>
+	 *    present if client-side AjaxProduto sourced data is used</li></ol>
 	 */
 
 	/**
@@ -14547,7 +14547,7 @@
 	 */
 
 	/**
-	 * AjaxLab (XHR) event, fired whenever an AjaxLab request is completed from a
+	 * AjaxProduto (XHR) event, fired whenever an AjaxProduto request is completed from a
 	 * request to made to the server for new data. This event is called before
 	 * DataTables processed the returned data, so it can also be used to pre-
 	 * process the data returned from the server, if needed.

@@ -41,7 +41,7 @@
                     <ul class="dropdown-menu" aria-labelledby="themes">
                         <li><a href="Cliente">Clientes</a></li>
                         <li class="divider"></li>
-                        <li><a href="AjaxLab">Produtos</a></li>
+                        <li><a href="AjaxProduto">Produtos</a></li>
                         <li class="divider"></li>
                         <li><a href="">Materia prima</a></li>
                         <li class="divider"></li>
