@@ -99,6 +99,7 @@ $('#report').dataTable({
  })
  });*/
 
+// VALIDAÇÃO DE CAMPOS DE PRODUTOS
 $('#form_produtos').bootstrapValidator({
     feedbackIcons: {
         valid: 'glyphicon glyphicon-ok',
@@ -311,4 +312,198 @@ $('#produtos').delegate('.delete_prod', 'click', function () {
 
 $('#atualizaItemModal').on('hide.bs.modal', function() {
     $('#form_atualiza_prod').bootstrapValidator('resetForm', true);
+});
+
+
+
+
+// VALIDAÇÃO DE MATERIA PRIMA E ENTRADA/SAIDA e ALTERAÇÃO/DELETE DE MATERIA PRIMA
+$('#form_materia').bootstrapValidator({
+    feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+    },
+    fields: {
+        descricao: {
+            validators: {
+                notEmpty: {
+                    message: 'Informe o nome da materia prima.'
+                }
+            }
+        },
+        preco: {
+            validators: {
+                notEmpty: {
+                    message: 'Informe o preço de custo.'
+                },
+                numeric: {
+                    message: 'Preço de custo deve ser numérico.'
+                }
+            }
+        }
+    }
+}).on('success.form.bv', function (e) {
+    // Prevent form submission
+    e.preventDefault();
+
+    // Get the form instance
+    var $form = $(e.target);
+
+    // Get the BootstrapValidator instance
+    var bv = $form.data('bootstrapValidator');
+
+    // Use AjaxProduto to submit form data
+    /*
+     $.post($form.attr('action'), $form.serialize(), function(result) {
+     // ... Process the result ...
+     }, 'json');
+     */
+
+    var dados = $(this).serialize();
+
+    $.ajax({
+        type: "POST",
+        url: "AjaxMateriaPrima/saveItem",
+        data: dados,
+        success: function (data) {
+            $(data).add
+            $(data).appendTo('#materias').hide().fadeIn();
+
+            bv.resetForm(true);
+        }
+    });
+    return false;
+});
+
+$('#form_atualiza_materia').bootstrapValidator({
+    feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+    },
+    fields: {
+        descricao: {
+            validators: {
+                notEmpty: {
+                    message: 'Informe o nome da materia prima.'
+                }
+            }
+        },
+        preco: {
+            validators: {
+                notEmpty: {
+                    message: 'Informe o preço de custo.'
+                },
+                numeric: {
+                    message: 'Preço de custo deve ser numérico.'
+                }
+            }
+        }
+    }
+}).on('success.form.bv', function (e) {
+// Prevent form submission
+    e.preventDefault();
+
+    // Get the form instance
+    var $form = $(e.target);
+
+    // Get the BootstrapValidator instance
+    var bv = $form.data('bootstrapValidator');
+
+    var dados = $(this).serialize();
+
+    $.ajax({
+        type: "POST",
+        url: "AjaxMateriaPrima/atualizaItem",
+        data: dados,
+        dataType: 'json',
+        success: function (data) {
+            var prod_id = '#materia_' + data.id_materia_prima;
+            var prod = $(prod_id);
+
+            prod.html(data.descricao  + ' R$ ' + data.preco);
+
+            $('#form_atualiza_materia input[name=id_materia_prima]').val('');
+            $('#form_atualiza_materia input[name=descricao]').val('');
+            $('#form_atualiza_materia input[name=preco]').val('');
+            $('#form_atualiza_materia input[name=saldoEstoque]').val('');
+
+            $('#atualizaModalLabel').html('<span class="text-warning"><i class="fa fa-check"></i> Produto atualizado!</span>')
+                .fadeIn();
+
+            $form.parents('#atualizaItemModal').modal('hide');
+
+        }
+    });
+    return false;
+});
+
+$('#form_apaga_materia')
+    .submit(function () {
+
+        var dados = $(this).serialize();
+
+        $.ajax({
+            type: "POST",
+            url: "AjaxMateriaPrima/removeItem",
+            data: dados,
+            dataType: 'json',
+            success: function (data) {
+                $('#form_apaga_materia input[name=id_materia_prima]').val('');
+                $('#del_item_confirma').html('<span class="text-success"><i class="fa fa-check"></i> Materia Prima ' + data.descricao + ' Apagado!</span>')
+                    .hide().fadeIn();
+
+                $('#materias li[data-li_item=' + data.id_materia_prima + ']').remove();
+                $('#apagaItemModal').modal('hide');
+            }
+        });
+        return false;
+    });
+
+/** Início - Botões Atualizar e Apagar */
+$('#materias').delegate('.update_materia', 'click', function () {
+
+    var id = $(this).attr('id');
+
+    $.ajax({
+        type: "GET",
+        url: "AjaxMateriaPrima/findItem?id_materia_prima=" + id,
+        data: $(this).serialize(),
+        dataType: 'json',
+        success: function (data) {
+
+            $('#form_atualiza_materia input[name=id_materia_prima]').val(data.id_materia_prima);
+            $('#form_atualiza_materia input[name=descricao]').val(data.descricao);
+            $('#form_atualiza_materia input[name=preco]').val(data.preco);
+            $('#form_atualiza_materia input[name=saldoestoque]').val(data.saldoestoque);
+
+            $('#atualizaModalLabel').html('Atualizar Materia Prima');
+
+        }
+    });
+});
+
+$('#materias').delegate('.delete_materia', 'click', function () {
+
+    var id = $(this).attr('data-delprodid');
+
+    $.ajax({
+        type: "GET",
+        url: "AjaxMateriaPrima/findItem?id_materia_prima=" + id,
+        data: $(this).serialize(),
+        dataType: 'json',
+        success: function (data) {
+
+            $('#form_apaga_materia input[name=id_materia_prima]').val(data.id_materia_prima);
+
+            $('#del_item_confirma').html('<span class="text-danger"><i class="fa fa-trash-o"></i> Apagar materia prima ' + data.descricao + '?</span>');
+
+        }
+    });
+});
+/** Fim - Botões Atualizar e Apagar */
+
+$('#atualizaItemModal').on('hide.bs.modal', function() {
+    $('#form_atualiza_materia').bootstrapValidator('resetForm', true);
 });

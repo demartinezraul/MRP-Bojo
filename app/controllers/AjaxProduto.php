@@ -23,7 +23,7 @@ class AjaxProduto extends Controller
                 <span id=\"prod_{$return['id_produto']}\">
                     {$return['descricao']} {$return['cor']}  - R$  {$return['preco']}
                 </span>
-                <a href=\"#\" class=\"btn btn-warning btn-sm pull-right delete_prod\" data-delprodid=\"{$return['id_produto']}\" data-toggle=\"modal\" data-target=\"#apagaItemModal\"><i class=\"fa fa-trash-o\"></i></a>
+                <a href=\"#\" class=\"btn btn-danger btn-sm pull-right delete_prod\" data-delprodid=\"{$return['id_produto']}\" data-toggle=\"modal\" data-target=\"#apagaItemModal\"><i class=\"fa fa-trash-o\"></i></a>
                 <a href=\"#\" class=\"btn btn-primary btn-sm pull-right update_prod\" id=\"{$return['id_produto']}\" data-toggle=\"modal\" data-target=\"#atualizaItemModal\"><i class=\"fa fa-edit\"></i></a>
               </li>";
     }

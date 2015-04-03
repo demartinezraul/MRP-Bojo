@@ -10,9 +10,9 @@
 
 <div class="row">
     <div class="col-sm-6">
-        <h3>Cadastro de Produtos</h3>
+        <h3>Cadastro de Materia Prima</h3>
 
-        <form class="form-horizontal" id="form_produtos">
+        <form class="form-horizontal" id="form_materia">
             <fieldset>
 
                 <div class="form-group col-sm-12">
@@ -22,36 +22,18 @@
                         <input name="descricao" class="form-control" type="text" id="descricao">
                     </div>
                 </div>
-                <div class="form-group form-group col-sm-6">
-                    <label for="tamanho" class="control-label"> Tamanho do bojo</label>
-
-                    <div>
-                        <input name="tamanho" class="form-control" type="text"
-                               id="tamanho">
-                    </div>
-                </div>
-                <div class="form-group form-group col-sm-6">
-                    <label for="cor" class="control-label"> Cor do produto</label>
-
-                    <div>
-                        <input name="cor" class="form-control" type="text"
-                               id="cor">
-                    </div>
-                </div>
                 <div class="form-group col-sm-6">
                     <label for="preco" class="control-label"> Preço de Custo</label>
 
                     <div>
-                        <input name="preco" class="form-control" type="text"
-                               id="preco">
+                        <input name="preco" class="form-control" type="text" id="preco">
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
-                    <label for="saldo_estoque" class="control-label"> Estoque</label>
+                    <label for="saldoEstoque" class="control-label"> Estoque</label>
 
                     <div>
-                        <input name="saldo_estoque" class="form-control" type="text"
-                               id="saldo_estoque">
+                        <input name="saldoEstoque" class="form-control" type="text" id="saldoEstoque">
                     </div>
                 </div>
                 <div class="form-group col-sm-12">
@@ -64,19 +46,20 @@
     </div>
 
     <div class="col-sm-6">
-        <h3>Produtos</h3>
-        <ul id="produtos" class="list-group">
+        <h3>Materia Prima</h3>
+        <ul id="materias" class="list-group">
             <?php
-            foreach ($data['resultado'] as $produto) {
-                echo "<li class=\"list-group-item\" data-li_item=\"{$produto['id_produto']}\">
-                        <span id=\"prod_{$produto['id_produto']}\">
-                            {$produto['descricao']} {$produto['cor']}{$produto['preco']}
+            foreach ($data['resultado'] as $materia) {
+                echo "<li class=\"list-group-item\" data-li_item=\"{$materia['id_materia_prima']}\">
+                        <span id=\"materia_{$materia['id_materia_prima']}\">
+                            {$materia['descricao']} {$materia['preco']}
                         </span>
-                        <a href=\"#\" class=\"btn btn-danger btn-sm pull-right delete_prod\" data-delprodid=\"{$produto['id_produto']}\" data-toggle=\"modal\" data-target=\"#apagaItemModal\"><i class=\"fa fa-trash-o\"></i></a>
-                        <a href=\"#\" class=\"btn btn-primary btn-sm pull-right update_prod\" id=\"{$produto['id_produto']}\" data-toggle=\"modal\" data-target=\"#atualizaItemModal\"><i class=\"fa fa-edit\"></i></a>
+                        <a href=\"#\" class=\"btn btn-danger btn-sm pull-right delete_materia\" data-delprodid=\"{$materia['id_materia_prima']}\" data-toggle=\"modal\" data-target=\"#apagaItemModal\"><i class=\"fa fa-trash-o\"></i></a>
+                        <a href=\"#\" class=\"btn btn-primary btn-sm pull-right update_materia\" id=\"{$materia['id_materia_prima']}\" data-toggle=\"modal\" data-target=\"#atualizaItemModal\"><i class=\"fa fa-edit\"></i></a>
                      </li>";
+                var_dump($materia);
             }
-             var_dump($produto);
+            //var_dump($materia);
             ?>
         </ul>
     </div>
@@ -88,12 +71,12 @@
     <div class="modal-dialog">
 
         <div class="modal-content">
-            <form class="form-horizontal" id="form_atualiza_prod">
+            <form class="form-horizontal" id="form_atualiza_materia">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span
                             aria-hidden="true">&times;</span><span
                             class="sr-only">Fechar</span></button>
-                    <h4 class="modal-title" id="atualizaModalLabel">Atualizar Produto</h4>
+                    <h4 class="modal-title" id="atualizaModalLabel">Atualizar Materia Prima</h4>
                 </div>
                 <div class="modal-body">
                     <div class="col-sm-12">
@@ -104,36 +87,18 @@
                                 <input name="descricao" class="form-control" type="text" id="descricao">
                             </div>
                         </div>
-                        <div class="form-group form-group col-sm-6">
-                            <label for="tamanho" class="control-label"> Tamanho do bojo</label>
-
-                            <div>
-                                <input name="tamanho" class="form-control" type="text"
-                                       id="tamanho">
-                            </div>
-                        </div>
-                        <div class="form-group form-group col-sm-6">
-                            <label for="cor" class="control-label"> Cor do produto</label>
-
-                            <div>
-                                <input name="cor" class="form-control" type="text"
-                                       id="cor">
-                            </div>
-                        </div>
                         <div class="form-group col-sm-6">
                             <label for="preco" class="control-label"> Preço de Custo</label>
 
                             <div>
-                                <input name="preco" class="form-control" type="text"
-                                       id="preco">
+                                <input name="preco" class="form-control" type="text" id="preco">
                             </div>
                         </div>
                         <div class="form-group col-sm-6">
-                            <label for="saldo_estoque" class="control-label"> Estoque</label>
+                            <label for="saldoEstoque" class="control-label"> Estoque</label>
 
                             <div>
-                                <input name="saldo_estoque" class="form-control" type="text"
-                                       id="saldo_estoque">
+                                <input name="saldoEstoque" class="form-control" type="text" id="saldoEstoque">
                             </div>
                         </div>
                     </div>
@@ -143,7 +108,7 @@
                     <input type="submit" class="btn btn-primary col-xs-offset-2" name="enviar" value="Enviar"/>
                 </div>
 
-                <input type="hidden" name="id_produto" value="">
+                <input type="hidden" name="id_materia_prima" value="">
             </form>
         </div>
     </div>
@@ -155,7 +120,7 @@
     <div class="modal-dialog">
 
         <div class="modal-content">
-            <form class="form-horizontal" id="form_apaga_prod">
+            <form class="form-horizontal" id="form_apaga_materia">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span
                             aria-hidden="true">&times;</span><span
@@ -180,7 +145,7 @@
                     <input type="submit" class="btn btn-danger col-xs-offset-2" name="deletar" value="Deletar"/>
                 </div>
 
-                <input type="hidden" name="id_produto" value="">
+                <input type="hidden" name="id_materia_prima" value="">
             </form>
         </div>
     </div>
