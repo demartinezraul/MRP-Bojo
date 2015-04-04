@@ -44,7 +44,6 @@
                         <li><a href="AjaxProduto">Produtos</a></li>
                         <li class="divider"></li>
                         <li><a href="AjaxMateriaPrima">Materia prima</a></li>
-                        <li class="divider"></li>
                     </ul>
                 </li>
                 <li class="dropdown">

@@ -54,12 +54,11 @@
                         <span id=\"materia_{$materia['id_materia_prima']}\">
                             {$materia['descricao']} {$materia['preco']}
                         </span>
-                        <a href=\"#\" class=\"btn btn-danger btn-sm pull-right delete_materia\" data-delprodid=\"{$materia['id_materia_prima']}\" data-toggle=\"modal\" data-target=\"#apagaItemModal\"><i class=\"fa fa-trash-o\"></i></a>
+                        <a href=\"#\" class=\"btn btn-danger btn-sm pull-right delete_materia\" data-delmateriaid=\"{$materia['id_materia_prima']}\" data-toggle=\"modal\" data-target=\"#apagaItemModal\"><i class=\"fa fa-trash-o\"></i></a>
                         <a href=\"#\" class=\"btn btn-primary btn-sm pull-right update_materia\" id=\"{$materia['id_materia_prima']}\" data-toggle=\"modal\" data-target=\"#atualizaItemModal\"><i class=\"fa fa-edit\"></i></a>
                      </li>";
-                var_dump($materia);
             }
-            //var_dump($materia);
+            var_dump($materia);
             ?>
         </ul>
     </div>

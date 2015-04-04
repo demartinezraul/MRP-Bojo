@@ -314,10 +314,14 @@ $('#atualizaItemModal').on('hide.bs.modal', function() {
     $('#form_atualiza_prod').bootstrapValidator('resetForm', true);
 });
 
+/*
+#################################################################################################################
+#############  VALIDAÇÃO DE MATERIA PRIMA E ENTRADA/SAIDA e UPDATE/DELETE DE MATERIA PRIMA  ##################
+#################################################################################################################
+ */
 
 
 
-// VALIDAÇÃO DE MATERIA PRIMA E ENTRADA/SAIDA e ALTERAÇÃO/DELETE DE MATERIA PRIMA
 $('#form_materia').bootstrapValidator({
     feedbackIcons: {
         valid: 'glyphicon glyphicon-ok',
@@ -419,8 +423,8 @@ $('#form_atualiza_materia').bootstrapValidator({
         data: dados,
         dataType: 'json',
         success: function (data) {
-            var prod_id = '#materia_' + data.id_materia_prima;
-            var prod = $(prod_id);
+            var materia_id = '#materia_' + data.id_materia_prima;
+            var materia = $(materia_id);
 
             prod.html(data.descricao  + ' R$ ' + data.preco);
 
@@ -486,7 +490,7 @@ $('#materias').delegate('.update_materia', 'click', function () {
 
 $('#materias').delegate('.delete_materia', 'click', function () {
 
-    var id = $(this).attr('data-delprodid');
+    var id = $(this).attr('data-delmateriaid');
 
     $.ajax({
         type: "GET",
