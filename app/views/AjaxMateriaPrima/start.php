@@ -30,10 +30,10 @@
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
-                    <label for="saldoEstoque" class="control-label"> Estoque</label>
+                    <label for="saldo_estoque" class="control-label"> Estoque</label>
 
                     <div>
-                        <input name="saldoEstoque" class="form-control" type="text" id="saldoEstoque">
+                        <input name="saldo_estoque" class="form-control" type="text" id="saldo_estoque">
                     </div>
                 </div>
                 <div class="form-group col-sm-12">
@@ -95,10 +95,10 @@
                             </div>
                         </div>
                         <div class="form-group col-sm-6">
-                            <label for="saldoEstoque" class="control-label"> Estoque</label>
+                            <label for="saldo_estoque" class="control-label"> Estoque</label>
 
                             <div>
-                                <input name="saldoEstoque" class="form-control" type="text" id="saldoEstoque">
+                                <input name="saldo_estoque" class="form-control" type="text" id="saldo_estoque">
                             </div>
                         </div>
                     </div>

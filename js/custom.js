@@ -427,7 +427,7 @@ $('#form_atualiza_materia').bootstrapValidator({
             $('#form_atualiza_materia input[name=id_materia_prima]').val('');
             $('#form_atualiza_materia input[name=descricao]').val('');
             $('#form_atualiza_materia input[name=preco]').val('');
-            $('#form_atualiza_materia input[name=saldoEstoque]').val('');
+            $('#form_atualiza_materia input[name=saldo_estoque]').val('');
 
             $('#atualizaModalLabel').html('<span class="text-warning"><i class="fa fa-check"></i> Produto atualizado!</span>')
                 .fadeIn();
@@ -476,7 +476,7 @@ $('#materias').delegate('.update_materia', 'click', function () {
             $('#form_atualiza_materia input[name=id_materia_prima]').val(data.id_materia_prima);
             $('#form_atualiza_materia input[name=descricao]').val(data.descricao);
             $('#form_atualiza_materia input[name=preco]').val(data.preco);
-            $('#form_atualiza_materia input[name=saldoestoque]').val(data.saldoestoque);
+            $('#form_atualiza_materia input[name=saldo_estoque]').val(data.saldo_estoque);
 
             $('#atualizaModalLabel').html('Atualizar Materia Prima');
 

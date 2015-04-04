@@ -26,7 +26,7 @@ class AjaxMateriaPrima extends Controller
         $this->model = new AjaxMateriaPrimaModel();
         $return = $this->model->gravarItem();
         echo "<li class=\"list-group-item\" data-li_item=\"{$return['id_materia_prima']}\">
-                <span id=\"prod_{$return['id_materia_prima']}\">
+                <span id=\"materia_{$return['id_materia_prima']}\">
                     {$return['descricao']}  - R$  {$return['preco']}
                 </span>
                 <a href=\"#\" class=\"btn btn-danger btn-sm pull-right delete_materia\" data-delprodid=\"{$return['id_materia_prima']}\" data-toggle=\"modal\" data-target=\"#apagaItemModal\"><i class=\"fa fa-trash-o\"></i></a>

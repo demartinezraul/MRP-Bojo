@@ -62,14 +62,14 @@ class AjaxMateriaPrimaModel extends Model
             'id_materia_prima' => (int)Input::get('id_materia_prima'),
             'descricao' => Input::get('descricao'),
             'preco' => (double)Input::get('preco'),
-            'saldoEstoque' => (int)Input::get('saldoEstoque')
+            'saldo_estoque' => (int)Input::get('saldo_estoque')
         );
     }
 
     public function getMateriaPrima()
     {
         $this->db->select(
-            'id_materia_prima, descricao, saldoEstoque,
+            'id_materia_prima, descricao, saldo_estoque,
                 to_char(preco, \' - "  R$"999G999G990D99\') as preco',
             'tb_materia_prima',null, null, null, 'id_materia_prima'
         );
