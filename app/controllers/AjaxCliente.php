@@ -24,11 +24,11 @@ class AjaxCliente extends Controller {
     {
         $this->model = new AjaxClienteModel();
         $return = $this->model->gravarItem();
-        echo "<li class=\"list-group-item\" data-li_item=\"{$return['id_cliente']}\">
+        echo "<li class=\"list-group-item\" data-li_cliente=\"{$return['id_cliente']}\">
                 <span id=\"cli_{$return['id_cliente']}\">
-                    {$return['nome']} {$return['email']} {$return['telefone']}
+                    {$return['nome']}  {$return['email']}  {$return['telefone']}
                 </span>
-                <a href=\"#\" class=\"btn btn-danger btn-sm pull-right delete_cliente\" data-delprodid=\"{$return['id_cliente']}\" data-toggle=\"modal\" data-target=\"#apagaItemModal\"><i class=\"fa fa-trash-o\"></i></a>
+                <a href=\"#\" class=\"btn btn-danger btn-sm pull-right delete_cliente\" data-delclienteid=\"{$return['id_cliente']}\" data-toggle=\"modal\" data-target=\"#apagaItemModal\"><i class=\"fa fa-trash-o\"></i></a>
                 <a href=\"#\" class=\"btn btn-primary btn-sm pull-right update_cliente\" id=\"{$return['id_cliente']}\" data-toggle=\"modal\" data-target=\"#atualizaItemModal\"><i class=\"fa fa-edit\"></i></a>
               </li>";
     }

@@ -75,8 +75,8 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('#cpf').inputmask("999.999.999-99");
-    $('#datsa_nascimento').inputmask("99/99/9999");
-    $('#telefone').inputmask("(99) 9-9999-9999");
+    $('#data_nascimento').inputmask("99/99/9999");
+    $('#telefone').inputmask("(99)9-9999-9999");
 });
 
 $('#report').dataTable({
@@ -426,7 +426,7 @@ $('#form_atualiza_materia').bootstrapValidator({
             var materia_id = '#materia_' + data.id_materia_prima;
             var materia = $(materia_id);
 
-            prod.html(data.descricao  + ' R$ ' + data.preco);
+            materia.html(data.descricao  + ' R$ ' + data.preco);
 
             $('#form_atualiza_materia input[name=id_materia_prima]').val('');
             $('#form_atualiza_materia input[name=descricao]').val('');
@@ -631,10 +631,10 @@ $('#form_atualiza_cliente').bootstrapValidator({
         data: dados,
         dataType: 'json',
         success: function (data) {
-            var cliente_id = '#cliente_' + data.id_cliente;
-            var cliente = $(cliente_id);
+            var cliente_id = '#cli_' + data.id_cliente;
+            var cli = $(cliente_id);
 
-            prod.html(data.nome  + data.email + data.telefone);
+            cli.html(data.nome  + data.email + data.telefone);
 
             $('#form_atualiza_cliente input[name=id_cliente]').val('');
             $('#form_atualiza_cliente input[name=nome]').val('');
@@ -668,7 +668,7 @@ $('#form_apaga_cliente')
                 $('#del_item_confirma').html('<span class="text-success"><i class="fa fa-check"></i> Cliente ' + data.nome + ' Apagado!</span>')
                     .hide().fadeIn();
 
-                $('#clientes li[data-li_item=' + data.id_cliente + ']').remove();
+                $('#clientes li[data-li_cliente=' + data.id_cliente + ']').remove();
                 $('#apagaItemModal').modal('hide');
             }
         });
@@ -682,7 +682,7 @@ $('#clientes').delegate('.update_cliente', 'click', function () {
 
     $.ajax({
         type: "GET",
-        url: "AjaxCliente/findItem?id_cliente=" + id,
+        url: "AjaxCliente/findCliente?id_cliente=" + id,
         data: $(this).serialize(),
         dataType: 'json',
         success: function (data) {
@@ -702,11 +702,11 @@ $('#clientes').delegate('.update_cliente', 'click', function () {
 
 $('#clientes').delegate('.delete_cliente', 'click', function () {
 
-    var id = $(this).attr('data-delmateriaid');
+    var id = $(this).attr('data-delclienteid');
 
     $.ajax({
         type: "GET",
-        url: "AjaxCliente/findItem?id_cliente=" + id,
+        url: "AjaxCliente/findCliente?id_cliente=" + id,
         data: $(this).serialize(),
         dataType: 'json',
         success: function (data) {

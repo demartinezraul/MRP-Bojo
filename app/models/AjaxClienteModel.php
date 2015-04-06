@@ -12,7 +12,7 @@ class AjaxClienteModel extends Model {
     {
         try {
             $this->setDadosCliente();
-            //var_dump($this->dados);die;
+            var_dump($this->dados);
             unset($this->dados['id_cliente']);
             $this->db->insert($this->tabela, $this->dados);
         } catch (Exception $e) {
@@ -34,7 +34,7 @@ class AjaxClienteModel extends Model {
         }
         return $this->db->first();
     }
-    public function deleteItem()
+    public function deleteCliente()
     {
         $this->tabela = 'tb_cliente';
         $this->primary_key = 'id_cliente';
@@ -56,7 +56,6 @@ class AjaxClienteModel extends Model {
         $this->primary_key = 'id_cliente';
 
         $_POST = filter_input_array(INPUT_POST);
-        $data = (new DateTime(date(('d/m/Y'))));
 
         $this->dados = array(
             'id_cliente' => (int)Input::get('id_cliente'),
@@ -71,7 +70,8 @@ class AjaxClienteModel extends Model {
     public function getCliente()
     {
         $this->db->select(
-            'id_cliente, nome, cpf, email, telefone, data_nascimento',
+            'id_cliente, nome, cpf, email, telefone,
+                to_char(data_nascimento, \' - "  DD/MM/YYYY\') as data_nascimento',
             'tb_cliente',null, null, null, 'id_cliente'
         );
         return $this->db->getResultado();

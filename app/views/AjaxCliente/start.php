@@ -68,14 +68,14 @@
         <ul id="clientes" class="list-group">
             <?php
             foreach ($data['resultado'] as $cliente) {
-                echo "<li class=\"list-group-item\" data-li_item=\"{$cliente['id_cliente']}\">
+                echo "<li class=\"list-group-item\" data-li_cliente=\"{$cliente['id_cliente']}\">
                         <span id=\"cli_{$cliente['id_cliente']}\">
-                            {$cliente['nome']} {$cliente['email']}{$cliente['telefone']}
+                            {$cliente['nome']} {$cliente['email']}  {$cliente['telefone']}
                         </span>
-                        <a href=\"#\" class=\"btn btn-danger btn-sm pull-right delete_cliente\" data-delprodid=\"{$cliente['id_cliente']}\" data-toggle=\"modal\" data-target=\"#apagaItemModal\"><i class=\"fa fa-trash-o\"></i></a>
+                        <a href=\"#\" class=\"btn btn-danger btn-sm pull-right delete_cliente\" data-delclienteid=\"{$cliente['id_cliente']}\" data-toggle=\"modal\" data-target=\"#apagaItemModal\"><i class=\"fa fa-trash-o\"></i></a>
                         <a href=\"#\" class=\"btn btn-primary btn-sm pull-right update_cliente\" id=\"{$cliente['id_cliente']}\" data-toggle=\"modal\" data-target=\"#atualizaItemModal\"><i class=\"fa fa-edit\"></i></a>
                      </li>";
-                var_dump($data);
+                //var_dump($data);
             }
             ?>
         </ul>
