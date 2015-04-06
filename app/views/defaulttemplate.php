@@ -39,7 +39,7 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Cadastros <span class="caret"></span></a>
                     <ul class="dropdown-menu" aria-labelledby="themes">
-                        <li><a href="Cliente">Clientes</a></li>
+                        <li><a href="AjaxCliente">Clientes</a></li>
                         <li class="divider"></li>
                         <li><a href="AjaxProduto">Produtos</a></li>
                         <li class="divider"></li>

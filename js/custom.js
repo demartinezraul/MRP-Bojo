@@ -75,8 +75,8 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('#cpf').inputmask("999.999.999-99");
-    $('#data_nascimento').inputmask("99/99/9999");
-    $('#telefone').inputmask("(99) 9999-9999");
+    $('#datsa_nascimento').inputmask("99/99/9999");
+    $('#telefone').inputmask("(99) 9-9999-9999");
 });
 
 $('#report').dataTable({
@@ -510,4 +510,216 @@ $('#materias').delegate('.delete_materia', 'click', function () {
 
 $('#atualizaItemModal').on('hide.bs.modal', function() {
     $('#form_atualiza_materia').bootstrapValidator('resetForm', true);
+});
+
+
+
+/*
+ #################################################################################################################
+ ######################  VALIDAÇÃO DE CLIENTE  ENTRADA/SAIDA e UPDATE/DELETE DE CLIENTE  #########################
+ #################################################################################################################
+ */
+
+
+
+$('#form_cliente').bootstrapValidator({
+    feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+    },
+    fields: {
+        nome: {
+            validators: {
+                notEmpty: {
+                    message: 'Obrigatorio informar o nome.'
+                }
+            }
+        },
+        cpf: {
+            validators: {
+                notEmpty: {
+                    message: 'Obrigatorio informar o cpf    .'
+                }
+            }
+        },
+        email: {
+            validators: {
+                notEmpty: {
+                    message: 'Obrigatorio informar o email.'
+                }
+            }
+        }
+    }
+}).on('success.form.bv', function (e) {
+    // Prevent form submission
+    e.preventDefault();
+
+    // Get the form instance
+    var $form = $(e.target);
+
+    // Get the BootstrapValidator instance
+    var bv = $form.data('bootstrapValidator');
+
+    // Use AjaxProduto to submit form data
+    /*
+     $.post($form.attr('action'), $form.serialize(), function(result) {
+     // ... Process the result ...
+     }, 'json');
+     */
+
+    var dados = $(this).serialize();
+
+    $.ajax({
+        type: "POST",
+        url: "AjaxCliente/saveCliente",
+        data: dados,
+        success: function (data) {
+            $(data).add
+            $(data).appendTo('#clientes').hide().fadeIn();
+
+            bv.resetForm(true);
+        }
+    });
+    return false;
+});
+
+$('#form_atualiza_cliente').bootstrapValidator({
+    feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+    },
+    fields: {
+        nome: {
+            validators: {
+                notEmpty: {
+                    message: 'Obrigatorio informar o nome.'
+                }
+            }
+        },
+        cpf: {
+            validators: {
+                notEmpty: {
+                    message: 'Obrigatorio informar o cpf    .'
+                }
+            }
+        },
+        email: {
+            validators: {
+                notEmpty: {
+                    message: 'Obrigatorio informar o email.'
+                }
+            }
+        }
+    }
+}).on('success.form.bv', function (e) {
+// Prevent form submission
+    e.preventDefault();
+
+    // Get the form instance
+    var $form = $(e.target);
+
+    // Get the BootstrapValidator instance
+    var bv = $form.data('bootstrapValidator');
+
+    var dados = $(this).serialize();
+
+    $.ajax({
+        type: "POST",
+        url: "AjaxCliente/atualizaCliente",
+        data: dados,
+        dataType: 'json',
+        success: function (data) {
+            var cliente_id = '#cliente_' + data.id_cliente;
+            var cliente = $(cliente_id);
+
+            prod.html(data.nome  + data.email + data.telefone);
+
+            $('#form_atualiza_cliente input[name=id_cliente]').val('');
+            $('#form_atualiza_cliente input[name=nome]').val('');
+            $('#form_atualiza_cliente input[name=cpf]').val('');
+            $('#form_atualiza_cliente input[name=email]').val('');
+            $('#form_atualiza_cliente input[name=telefone]').val('');
+            $('#form_atualiza_cliente input[name=data_nascimento]').val('');
+
+            $('#atualizaModalLabel').html('<span class="text-warning"><i class="fa fa-check"></i> Cliente atualizado!</span>')
+                .fadeIn();
+
+            $form.parents('#atualizaItemModal').modal('hide');
+
+        }
+    });
+    return false;
+});
+
+$('#form_apaga_cliente')
+    .submit(function () {
+
+        var dados = $(this).serialize();
+
+        $.ajax({
+            type: "POST",
+            url: "AjaxCliente/removeCliente",
+            data: dados,
+            dataType: 'json',
+            success: function (data) {
+                $('#form_apaga_cliente input[name=id_cliente]').val('');
+                $('#del_item_confirma').html('<span class="text-success"><i class="fa fa-check"></i> Cliente ' + data.nome + ' Apagado!</span>')
+                    .hide().fadeIn();
+
+                $('#clientes li[data-li_item=' + data.id_cliente + ']').remove();
+                $('#apagaItemModal').modal('hide');
+            }
+        });
+        return false;
+    });
+
+/** Início - Botões Atualizar e Apagar */
+$('#clientes').delegate('.update_cliente', 'click', function () {
+
+    var id = $(this).attr('id');
+
+    $.ajax({
+        type: "GET",
+        url: "AjaxCliente/findItem?id_cliente=" + id,
+        data: $(this).serialize(),
+        dataType: 'json',
+        success: function (data) {
+
+            $('#form_atualiza_cliente input[name=id_cliente]').val(data.id_cliente);
+            $('#form_atualiza_cliente input[name=nome]').val(data.nome);
+            $('#form_atualiza_cliente input[name=cpf]').val(data.cpf);
+            $('#form_atualiza_cliente input[name=email]').val(data.email);
+            $('#form_atualiza_cliente input[name=telefone]').val(data.telefone);
+            $('#form_atualiza_cliente input[name=data_nascimento]').val(data.data_nascimento);
+
+            $('#atualizaModalLabel').html('Atualizar Cliente');
+
+        }
+    });
+});
+
+$('#clientes').delegate('.delete_cliente', 'click', function () {
+
+    var id = $(this).attr('data-delmateriaid');
+
+    $.ajax({
+        type: "GET",
+        url: "AjaxCliente/findItem?id_cliente=" + id,
+        data: $(this).serialize(),
+        dataType: 'json',
+        success: function (data) {
+
+            $('#form_apaga_cliente input[name=id_cliente]').val(data.id_cliente);
+
+            $('#del_item_confirma').html('<span class="text-danger"><i class="fa fa-trash-o"></i> Apagar cliente ' + data.nome + '?</span>');
+
+        }
+    });
+});
+/** Fim - Botões Atualizar e Apagar */
+
+$('#atualizaItemModal').on('hide.bs.modal', function() {
+    $('#form_atualiza_cliente').bootstrapValidator('resetForm', true);
 });
