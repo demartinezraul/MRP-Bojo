@@ -52,7 +52,7 @@
                         <li><a href="#">Cadastrar Cliente</a></li>
                         <li><a href="#">Cadastrar Produto</a></li>
                         <li><a href="#">Cadastrar Materia prima</a></li>
-                        <li><a href="#">Cadastrar Pedido</a></li>
+                        <li><a href="Pedido">Cadastrar Pedido</a></li>
                         <li><a href="#">Cadastrar Formula do pedido</a></li>
                     </ul>
                 </li>
@@ -83,8 +83,8 @@
                 <br/>
                 <p>Desenvolvedores:</p>
                 <p>Raul Martinez</a>.  #Contato <a href="mailto:demartinezraul@gmail.com">demartinezraul@gmail.com</a><br/>
-                Rafael Silveira</a>.   #Contato <a href="mailto:@gmail.com">rafaelsilveira@gmail.com</a></p>
-                <p>Baseado no <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. Ícones <a href="http://fortawesome.github.io/Font-Awesome/" rel="nofollow">Font Awesome</a>. Web fonts <a href="http://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
+                Rafael Silveira</a>.   #Contato <a href="mailto:rafas28.rs@gmail.com">rafas28.rs@gmail.com</a></p>
+                <p>Baseado no <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>.</p>
 
             </div>
         </div>

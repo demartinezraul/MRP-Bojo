@@ -1,32 +1,26 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Raul
+ * Date: 06/04/2015
+ * Time: 23:56
+ */
 
 // PASSANDO VALORES COMO PARAMETRO E CADASTRANDO
-$obj = new ClienteDTO();
-
-//$obj->setNome('Ju');
-//$obj->setCpf('12341');
-//$obj->setEmail('Ju@bol.com');
-//$obj->setTelefone('1699991111');
-//$obj->setDataNascimento('31/03/1979');
-
+$obj = new PedidoDTO();
+//$obj->setIdCliente(1);
+//$obj->setDataPedido('06/04/2015');
+//$obj->setValortotal(49.99);
 //EXECUTANDO A CLASSE DAO PARA SALVAR VALORES
-$objDao = new ClienteDAO();
-
+$objDao = new PedidoDAO();
 //$objDao->gravar($obj);
 $retorno = $objDao->fullList(); // RETORNA UM ARRAY COM TODOS OS CLIENTES
 var_dump($retorno);
-
 // UPDATE NO ID 13
-//$obj = $objDao->getById(13);
+//
+//$obj = $objDao->getById(4);
 //$obj->setNome('Rafael');
 //$obj = $objDao->gravar($obj);
 //$objDao->delete($obj);
 //var_dump($obj);
-
-
-
-
-
-
-
 

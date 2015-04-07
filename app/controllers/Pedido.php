@@ -6,28 +6,28 @@
  * Time: 22:34
  */
 
-class Cliente extends Controller
+class Pedido extends Controller
 {
     /** @var \ClienteModel */
-    private $ClienteModel;
+    private $PedidoModel;
 
     public function __construct()
     { //o método é herdado da classe pai 'Controller'
-        $this->setModel(new ClienteDAO());
-        $this->clienteModel = new ClienteModel();
+        $this->setModel(new PedidoDAO());
+        $this->PedidoModel = new PedidoModel();
     }
 
     public function start()
     { //Pega a lista completa de perfis
-        $cliente_list = (array)$this->model->fullList();
+        $pedido_list = (array)$this->model->fullList();
 
         $dados = array(
             'pagesubtitle' => '',
-            'pagetitle' => 'Cliente',
-            'list' => $cliente_list
+            'pagetitle' => 'Pedido',
+            'list' => $pedido_list
         );
 
-        $this->view = new View('Cliente', 'start');
+        $this->view = new View('Pedido', 'start');
         $this->view->output($dados);
     }
 
@@ -38,8 +38,8 @@ class Cliente extends Controller
 
         $lista = array();
         if ($count > 0) {
-            foreach ($result as $cliente) {
-                $lista[] = $this->clienteModel->setDTO($cliente)->getArrayDados();
+            foreach ($result as $pedido) {
+                $lista[] = $this->pedidoModel->setDTO($pedido)->getArrayDados();
             }
         }
 
@@ -61,10 +61,10 @@ class Cliente extends Controller
         if (Input::exists()) {
             if (Token::check(Input::get('token'))) {
 
-                $cliente = $this->setDados();
+                $pedido = $this->setDados();
 
                 try {
-                    $obj = $this->model->gravar($cliente);
+                    $obj = $this->model->gravar($pedido);
                     return $obj;
                 } catch (Exception $e) {
                     CodeFail((int)$e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine());
@@ -76,13 +76,12 @@ class Cliente extends Controller
 
     private function setDados()
     {
-        $dto = new clienteDTO();
+        $dto = new pedidoDTO();
 
-        $dto->setIdCliente(Input::get('id_cliente'))
-            ->setNome(Input::get('nome'))
-            ->setCpf(Input::get('cpf'))
-            ->setEmail(Input::get('email'))
-            ->setDataNascimento(Input::get('data_nascimento'));
+        $dto->setIdPedido(Input::get('id_pedido'))
+            ->setIdCliente(Input::get('id_cliente'))
+            ->setdataPedido(Input::get('data_pedido'))
+            ->setValorTotal(Input::get('valorTotal'));
 
         return $dto;
     }
@@ -108,35 +107,5 @@ class Cliente extends Controller
             Redirect::to(SITE_URL . get_called_class());
         }
         return $obj;
-    }
-
-    public function buscaAjax()
-    {
-        $return = $this->ClienteModel->getCliente();
-        echo json_encode($return);
-    }
-
-    public function checkExisteCPF()
-    {
-        $cpf = Input::get('cpf');
-        $id = Input::get('id_cliente');
-
-        $return = array(
-            'valid' => $this->ClienteModel->existeCPF($cpf, $id)
-        );
-
-        echo json_encode($return);
-    }
-
-    public function checkExisteEmail()
-    {
-        $email = Input::get('email');
-        $id = Input::get('id_cliente');
-
-        $return = array(
-            'valid' => $this->ClienteModel->existeEmail($email, $id)
-        );
-
-        echo json_encode($return);
     }
 }
