@@ -2,11 +2,11 @@
 /**
  * Created by PhpStorm.
  * User: Raul
- * Date: 31/03/2015
- * Time: 00:35
+ * Date: 09/04/2015
+ * Time: 17:15
  */
 
-class ProdutoDTO extends DataTransferObject {
+class ProdutoDTO extends DataTransferObject{
 
     private $id_produto;
     private $descricao;
@@ -26,15 +26,13 @@ class ProdutoDTO extends DataTransferObject {
             'tamanho' => 'getTamanho',
             'cor' => 'getCor',
             'preco' => 'getPreco',
-            'saldo_estoque' => 'getSaldoEstoque',
+            'saldo_estoque' => 'getSaldoEstoque'
         );
     }
 
     /**
-     * Retorna um array com todos os campos da classe e seus métodos 'Getters'
-     * Objetivo: fornecer um meio para que o seu respectivo DAO possa saber
-     * dinamicamente quais os campos da tabela e quais métodos executar para
-     * resgatar os dados
+     * Deve retornar um array associativo onde os índices são as colunas da tabela
+     * e os valores são os métodos 'Getter' da respectiva coluna
      * @return array
      */
     public function getReflex()
@@ -90,8 +88,6 @@ class ProdutoDTO extends DataTransferObject {
         return $this->saldo_estoque;
     }
 
-    ################### SETTERS ####################
-
     /**
      * @param mixed $id_produto
      */
@@ -138,11 +134,13 @@ class ProdutoDTO extends DataTransferObject {
     }
 
     /**
-     * @param mixed $saldo_estoque
+     * @param mixed $saldoestoque
      */
     public function setSaldoEstoque($saldo_estoque)
     {
         $this->saldo_estoque = $saldo_estoque;
         return $this;
     }
+
+
 }

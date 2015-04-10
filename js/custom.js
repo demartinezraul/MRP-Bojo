@@ -76,6 +76,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#cpf').inputmask("999.999.999-99");
     $('#data_nascimento').inputmask("99/99/9999");
+    $('#data_pedido').inputmask("99/99/9999");
     $('#telefone').inputmask("(99)9-9999-9999");
 });
 
@@ -723,3 +724,22 @@ $('#clientes').delegate('.delete_cliente', 'click', function () {
 $('#atualizaItemModal').on('hide.bs.modal', function() {
     $('#form_atualiza_cliente').bootstrapValidator('resetForm', true);
 });
+
+/*$('#form_pedido').bootstrapValidator({
+    excluded: ':disabled',
+    feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh fa-spin'
+    },
+    fields: {
+        data_pedido: {
+            validators: {
+                notEmpty: {
+                    message: 'Informe data do pedido'
+                }
+            }
+        }
+    }
+});
+*/

@@ -23,11 +23,17 @@ class PedidoModel extends Model
 
     public function getArrayDados()
     {
+       $empresa = '';
+        if($this->dto->getIdCliente()){
+            $empresa = (new ClienteDAO())->getById($this->dto->getIdCliente())->getNome();
+        }
         return array(
             'id_pedido' => $this->dto->getIdPedido(),
             'id_cliente' => $this->dto->getIdCliente(),
+            'empresa' => $empresa,
             'data_pedido' => $this->dto->getDataPedido(),
-            'valortotal' => $this->dto->getValortotal()
+            //'valortotal' => $this->dto->getValortotal()
+
         );
     }
 
@@ -51,8 +57,8 @@ class PedidoModel extends Model
         return array(
             'id' => $this->dto->getIdPedido(),
             'id_cliente' => $this->dto->getIdCliente(),
-            'data_pedido' => $this->dto->getDataPedido(),
-            'valortotal' => $this->dto->getValortotal()
+            'data_pedido' => (new DateTime($this->dto->getDataPedido()))->format('d/m/Y'),
+            //'valortotal' => $this->dto->getValortotal()
         );
     }
 

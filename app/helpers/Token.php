@@ -4,12 +4,17 @@
  * Gera e checa a existência de um Token
  * esse token é usado para evitar "Cross site forgery"
  */
-class Token {
+class Token
+{
 
     /**
      * Gera um token e armazena na session
      */
-    public static function generate() {
+    public static function generate()
+    {
+        if (Session::exists('token')) {
+            Session::delete('token');
+        }
         return Session::put(Config::get('session/token_name'), md5(uniqid()));
     }
 
@@ -18,7 +23,8 @@ class Token {
      * @param string $token
      * @return boolean
      */
-    public static function check($token) {
+    public static function check($token)
+    {
         $tokenName = Config::get('session/token_name');
 
         if (Session::exists($tokenName) && $token === Session::get($tokenName)) {

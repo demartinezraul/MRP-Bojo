@@ -29,7 +29,6 @@ class PedidoDAO extends DataAccessObject
                 throw new Exception('Impossível Atualizar Pedido');
             }
         }
-        $obj = $this->getById($obj->getIdPedido());
         return $obj;
     }
     /**
@@ -37,7 +36,7 @@ class PedidoDAO extends DataAccessObject
      */
     public function fullList()
     {
-        return $this->select(null, null, null, "id_cliente");
+        return $this->select(null, null, null, "id_pedido");
 
     }
 }

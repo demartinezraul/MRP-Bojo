@@ -2,12 +2,11 @@
 /**
  * Created by PhpStorm.
  * User: Raul
- * Date: 31/03/2015
- * Time: 00:35
+ * Date: 09/04/2015
+ * Time: 17:15
  */
 
-class ProdutoDAO extends DataAccessObject
-{
+class ProdutoDAO extends DataAccessObject{
 
     public function __construct()
     {
@@ -15,29 +14,33 @@ class ProdutoDAO extends DataAccessObject
         $this->tabela = 'tb_produto';
         $this->primaryKey = 'id_produto';
         $this->dataTransfer = 'ProdutoDTO';
+
     }
 
-
+    /**
+     * @param ProdutoDTO $produto
+     * @throws Exception
+     */
     public function gravar(ProdutoDTO $produto)
     {
         if ($produto->getIdProduto() == '') {
             if (!$obj = $this->insert($produto)) {
-                throw new Exception('Impossível Inserir Pessoa Física');
+                throw new Exception('Impossível Inserir produto');
             }
         } else {
             if (!$obj = $this->update($produto)) {
-                throw new Exception('Impossível Atualizar Pessoa Física');
+                throw new Exception('Impossível Atualizar Produto');
             }
         }
-        $obj = $this->getById($obj->getIdProduto());
-        return $obj;
     }
-    /**
-     * @return bool| DataTransferObject
-     */
-    public function fullList()
-    {
-        return $this->select(null, null, null, "id_produto");
 
+    /**
+     * @param $where
+     * @return bool | DataTransferObject
+     */
+    public function get($where)
+    {
+        return $this->select($where, null, null, null);
     }
+
 }

@@ -37,7 +37,11 @@ $GLOBALS['config'] = array(
         'host' =>'127.0.0.1',
         'user' => 'postgres',
         'pass' => '123456',
-        'dbname' => 'bojo')
+        'dbname' => 'bojo'
+    ),
+    'session' => array(
+        'session_name' => 'user',
+        'token_name' => 'token')
 );
 
 //Classes CSS para personalização de mensagem de erro

@@ -79,6 +79,7 @@ class PedidoDTO extends DataTransferObject
     public function setIdPedido($id_pedido)
     {
         $this->id_pedido = $id_pedido;
+        return $this;
     }
 
     /**
@@ -87,6 +88,7 @@ class PedidoDTO extends DataTransferObject
     public function setIdCliente($id_cliente)
     {
         $this->id_cliente = $id_cliente;
+        return $this;
     }
 
     /**
@@ -95,6 +97,7 @@ class PedidoDTO extends DataTransferObject
     public function setDataPedido($data_pedido)
     {
         $this->data_pedido = $data_pedido;
+        return $this;
     }
 
     /**
@@ -103,5 +106,6 @@ class PedidoDTO extends DataTransferObject
     public function setValortotal($valortotal)
     {
         $this->valortotal = $valortotal;
+
     }
 }

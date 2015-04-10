@@ -50,9 +50,9 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Formularios <span class="caret"></span></a>
                     <ul class="dropdown-menu" aria-labelledby="themes">
                         <li><a href="#">Cadastrar Cliente</a></li>
-                        <li><a href="#">Cadastrar Produto</a></li>
+                        <li><a href="Producao/formproducao">Cadastrar Produto</a></li>
                         <li><a href="#">Cadastrar Materia prima</a></li>
-                        <li><a href="Pedido">Cadastrar Pedido</a></li>
+                        <li><a href="Pedido/formpedido">Cadastrar Pedido</a></li>
                         <li><a href="#">Cadastrar Formula do pedido</a></li>
                     </ul>
                 </li>

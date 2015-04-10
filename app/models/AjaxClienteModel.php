@@ -6,13 +6,13 @@
  * Time: 22:55
  */
 
-class AjaxClienteModel extends Model {
+class AjaxClienteModel extends Model{
 
     public function gravarItem()
     {
         try {
             $this->setDadosCliente();
-            var_dump($this->dados);
+            //var_dump($this->dados);
             unset($this->dados['id_cliente']);
             $this->db->insert($this->tabela, $this->dados);
         } catch (Exception $e) {

@@ -2,32 +2,32 @@
 /**
  * Created by PhpStorm.
  * User: Raul
- * Date: 29/03/2015
- * Time: 22:34
+ * Date: 09/04/2015
+ * Time: 20:03
  */
 
-class Pedido extends Controller
-{
-    /** @var \ClienteModel */
-    private $PedidoModel;
+class Producao extends Controller {
+
+    /** @var \ProducaoModel */
+    private $producaoModel;
 
     public function __construct()
     { //o método é herdado da classe pai 'Controller'
-        $this->setModel(new PedidoDAO());
-        $this->PedidoModel = new PedidoModel();
+        $this->setModel(new ProducaoDAO());
+        $this->producaoModel = new ProducaoModel();
     }
 
     public function start()
     { //Pega a lista completa de perfis
-        $pedido_list = (array)$this->model->fullList();
+        $producao_list = (array)$this->model->fullList();
 
         $dados = array(
             'pagesubtitle' => '',
-            'pagetitle' => 'Pedido',
-            'list' => $pedido_list
+            'pagetitle' => 'Pedido Produto',
+            'list' => $producao_list
         );
 
-        $this->view = new View('Pedido', 'start');
+        $this->view = new View('Producao', 'formproducao');
         $this->view->output($dados);
     }
 
@@ -38,8 +38,8 @@ class Pedido extends Controller
 
         $lista = array();
         if ($count > 0) {
-            foreach ($result as $pedido) {
-                $lista[] = $this->pedidoModel->setDTO($pedido)->getArrayDados();
+            foreach ($result as $producao) {
+                $lista[] = $this->producaoModel->setDTO($producao)->getArrayDados();
             }
         }
 
@@ -53,60 +53,38 @@ class Pedido extends Controller
         echo json_encode($return, JSON_PRETTY_PRINT);
     }
 
-
-    public function formpedido($id = null)
+    public function formproducao($id = null)
     {
-        $cliente = (new ClienteDAO())->fullList();
+        $pedido = (new PedidoDAO())->fullList();
+        $produto = (new ProdutoDAO())->fullList();
+
 
         if ($id) {
             /** @var PedidoDTO */
-            $pedidoarr = $this->findById($id);
+            $producaoarr = $this->findById($id);
 
-            //Formatação de datas
-
-            if ($pedidoarr->getDataPedido()) {
-                $nasc = new DateTime($pedidoarr->getDataPedido());
-                $pedidoarr->setDataPedido($nasc->format('d/m/Y'));
-            }
             $dados = array(
                 'pagetitle' => '',
                 'pagesubtitle' => '',
-                'cliente' => $cliente,
+                'pedido' => $pedido,
+                'produto' => $produto,
                 'id' => $id,
-                'pedido' => $pedidoarr,
+                'producao' => $producaoarr,
             );
 
         } else {
-            $pedido = new PedidoDTO();
+            $producao = new ProducaoDTO();
             $dados = array(
-                'pagetitle' => 'Cadastro de Pedido',
+                'pagetitle' => 'Cadastro de Pedido Produto',
                 'pagesubtitle' => '',
-                'cliente' => $cliente,
+                'pedido' => $pedido,
+                'produto' => $produto,
                 'id' => null,
-                'pedido' => $pedido
+                'producao' => $producao
             );
         }
 
-        $this->view = new View('Pedido', 'formpedido');
-        $this->view->output($dados);
-    }
-
-    public function visualizar($id = null)
-    {
-        $id = (int)$id;
-        $pessoa = $this->findById($id);
-        $dadosPessoais = $this->PedidoModel->setDTO($pessoa)->getArrayDados();
-
-        $dados = array(
-            //o campo 'obs' vai ser o subtítulo
-            'pagesubtitle' => '',
-            //o campo 'nome' vai ser o título da página
-            'pagetitle' => 'Pedido',
-            //todos os atributos do perfil
-            'dados_pessoais' => $dadosPessoais,
-        );
-
-        $this->view = new View('Pedido', 'visualizar');
+        $this->view = new View('Producao', 'formproducao');
         $this->view->output($dados);
     }
 
@@ -118,10 +96,10 @@ class Pedido extends Controller
         if (Input::exists()) {
             if (Token::check(Input::get('token'))) {
 
-                $pedido = $this->setDados();
+                $producao = $this->setDados();
 
                 try {
-                    $obj = $this->model->gravar($pedido);
+                    $obj = $this->model->gravar($producao);
                     return $obj;
                 } catch (Exception $e) {
                     CodeFail((int)$e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine());
@@ -133,17 +111,18 @@ class Pedido extends Controller
 
     private function setDados()
     {
-        $dto = new pedidoDTO();
+        $dto = new ProducaoDTO();
 
-        $dto->setIdPedido(Input::get('id_pedido'))
-            ->setIdCliente(Input::get('id_cliente'))
-            ->setdataPedido(Input::get('data_pedido'));
-            //->setValorTotal(Input::get('valortotal'));
+        $dto->setIdPedidoProduto(Input::get('id_pedido_produto'))
+            ->setIdPedido(Input::get('id_pedido'))
+            ->setIdProduto(Input::get('id_produto'))
+            ->setQuantidade(Input::get('quantidade'))
+            ->setValorunitario(Input::get('valorunitario'));
 
         return $dto;
     }
 
-    public function removerCliente(ClienteDTO $dto)
+    public function removerProduto(ProducaoDTO $dto)
     {
         if (Input::exists()) {
 

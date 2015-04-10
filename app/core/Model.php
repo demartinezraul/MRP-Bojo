@@ -17,10 +17,27 @@ abstract class Model {
         $this->db = DB::getInstance();
     }
 
-    public function fullList($colunas = null)
+    public function fullList()
     {
-        $this->db->select($colunas, $this->tabela, null, null, null, "{$this->primary_key} DESC");
+        $this->db->select($this->tabela, null, null, null, "{$this->primary_key} DESC");
         return $this->db->getResultado();
+    }
+
+    /**
+     * @param mixed $dados
+     */
+    public function setDados($dados)
+    {
+        $this->dados = $dados;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getDados()
+    {
+        return $this->dados;
     }
 
     /**
@@ -53,10 +70,4 @@ abstract class Model {
     {
         return $this->tabela;
     }
-
-    public function getDb()
-    {
-        return $this->db;
-    }
-
 }

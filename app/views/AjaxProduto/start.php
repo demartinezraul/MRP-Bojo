@@ -76,7 +76,7 @@
                         <a href=\"#\" class=\"btn btn-primary btn-sm pull-right update_prod\" id=\"{$produto['id_produto']}\" data-toggle=\"modal\" data-target=\"#atualizaItemModal\"><i class=\"fa fa-edit\"></i></a>
                      </li>";
             }
-             var_dump($produto);
+             //var_dump($produto);
             ?>
         </ul>
     </div>

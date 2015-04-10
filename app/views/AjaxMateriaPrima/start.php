@@ -58,7 +58,7 @@
                         <a href=\"#\" class=\"btn btn-primary btn-sm pull-right update_materia\" id=\"{$materia['id_materia_prima']}\" data-toggle=\"modal\" data-target=\"#atualizaItemModal\"><i class=\"fa fa-edit\"></i></a>
                      </li>";
             }
-            var_dump($materia);
+            //var_dump($materia);
             ?>
         </ul>
     </div>
