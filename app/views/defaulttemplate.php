@@ -53,7 +53,7 @@
                         <li><a href="Producao/formproducao">Cadastrar Produto</a></li>
                         <li><a href="#">Cadastrar Materia prima</a></li>
                         <li><a href="Pedido/formpedido">Cadastrar Pedido</a></li>
-                        <li><a href="#">Cadastrar Formula do pedido</a></li>
+                        <li><a href="Formula/formformula">Cadastrar Formula do pedido</a></li>
                     </ul>
                 </li>
                 <li>

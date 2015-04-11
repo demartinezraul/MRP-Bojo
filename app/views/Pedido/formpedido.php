@@ -9,32 +9,30 @@ $id_check = $data['id'];
 $token = Token::generate();
 ?>
 <div class="container">
-    <div class="container">
-        <div class="row">
+    <div class="row">
             <div class="col-md-12">
                 <h3 class="page-header"><?php echo $data['pagetitle']; ?>
                     <small><?php echo $data['pagesubtitle']; ?></small>
                     <?php if ($id_check): ?>
-                        <!--
                         <span class="btn-panel pull-right">
-                <a href="Pedido/visualizar/<?php echo $id_check; ?>" data-toggle="tooltip" data-placement="top"
-                   title="Ver Perfil!"
-                   class="btn btn-circle btn-lg">
-                    <i class="fa fa-eye"></i>
-                </a>
-                <a href="Pedido/" data-toggle="tooltip" data-placement="top" title="Ver Lista!"
-                   class="btn btn-circle btn-lg">
-                    <i class="fa fa-list"></i>
-                </a>
-            </span> -->
+                        <a href="Pedido/visualizar/<?php echo $id_check; ?>" data-toggle="tooltip" data-placement="top"
+                           title="Ver Pedido!"
+                           class="btn btn-circle btn-lg">
+                           <i class="fa fa-eye"></i>
+                        </a>
+                        <a href="Pedido/" data-toggle="tooltip" data-placement="top" title="Ver Lista!"
+                           class="btn btn-circle btn-lg">
+                           <i class="fa fa-list"></i>
+                        </a>
+                        </span>
                     <?php endif; ?>
                 </h3>
             </div>
         </div>
+
     <div class="row">
         <div class="col-md-12">
             <div>
-
                 <div id="TabAdicionais" class="tab-content">
                     <div class="tab-pane fade active in" id="principal">
                         <?php if ($cadastrado): ?>
@@ -48,11 +46,10 @@ $token = Token::generate();
                                             <p>Clique em avançar para adicionar dados a Pedido Produto
                                                 <strong><?php $cadastrado->getIdPedido();?></strong>?
                                             </p>
-
+                                            <!--
                                             <a href="Pedido/formpedido" class="btn btn-info" role="button">
                                                 <i class="fa fa-arrow-circle-o-left"></i> Voltar
                                             </a>
-                                            <!--
                                             <a href="Pedido/formpedido/" class="btn btn-success" role="button">
                                                 <i class="fa fa-arrow-circle-o-up"></i> Novo
                                             </a> -->
@@ -136,12 +133,8 @@ $token = Token::generate();
                                 </button>
                             </div>
                         </div>
-                        </fieldset>
-                        </form>
                     </div>
-                </div>
-            </div>
-            </fieldset>
-            </form>
             <?php endif; ?>
         </div>
+    </div>
+

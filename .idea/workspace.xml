@@ -2,36 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f12bcc10-0032-4c36-9c2f-02419e887f42" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/data_access/ClienteDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/data_access/ClienteDTO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/Producao.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/data_access/ProducaoDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/data_access/ProducaoDTO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/ProducaoModel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/Pedido/formpedido.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/Producao/formproducao.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/Producao/start.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/Pedido/visualizar.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/Formula.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/data_access/FormulaDAO.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/data_access/FormulaDTO.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/FormulaModel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/data_access/MateriaPrimaDAO.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/data_access/MateriaPrimaDTO.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/Formula/formformula.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/Formula/start.php" />
       <change type="DELETED" beforePath="C:\htdocs\MRP-Bojo\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="C:\htdocs\MRP-Bojo\app\controllers\Produto.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\htdocs\MRP-Bojo\app\models\ProdutoModel.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/AjaxClienteModel.php" afterPath="$PROJECT_DIR$/app/models/AjaxClienteModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dbc/DB.php" afterPath="$PROJECT_DIR$/app/dbc/DB.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/core/Model.php" afterPath="$PROJECT_DIR$/app/core/Model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/AjaxCliente.php" afterPath="$PROJECT_DIR$/app/controllers/AjaxCliente.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Pedido.php" afterPath="$PROJECT_DIR$/app/controllers/Pedido.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/data_access/PedidoDAO.php" afterPath="$PROJECT_DIR$/app/data_access/PedidoDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/data_access/PedidoDTO.php" afterPath="$PROJECT_DIR$/app/data_access/PedidoDTO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/PedidoModel.php" afterPath="$PROJECT_DIR$/app/models/PedidoModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/data_access/ProdutoDAO.php" afterPath="$PROJECT_DIR$/app/data_access/ProdutoDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/data_access/ProdutoDTO.php" afterPath="$PROJECT_DIR$/app/data_access/ProdutoDTO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/Session.php" afterPath="$PROJECT_DIR$/app/helpers/Session.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/Token.php" afterPath="$PROJECT_DIR$/app/helpers/Token.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/custom.js" afterPath="$PROJECT_DIR$/js/custom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ProducaoModel.php" afterPath="$PROJECT_DIR$/app/models/ProducaoModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/defaulttemplate.php" afterPath="$PROJECT_DIR$/app/views/defaulttemplate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/init.php" afterPath="$PROJECT_DIR$/app/init.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Pedido/formpedido.php" afterPath="$PROJECT_DIR$/app/views/Pedido/formpedido.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Producao/formproducao.php" afterPath="$PROJECT_DIR$/app/views/Producao/formproducao.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/AjaxCliente/start.php" afterPath="$PROJECT_DIR$/app/views/AjaxCliente/start.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/AjaxMateriaPrima/start.php" afterPath="$PROJECT_DIR$/app/views/AjaxMateriaPrima/start.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/AjaxProduto/start.php" afterPath="$PROJECT_DIR$/app/views/AjaxProduto/start.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Pedido/start.php" afterPath="$PROJECT_DIR$/app/views/Pedido/start.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Pedido/visualizar.php" afterPath="$PROJECT_DIR$/app/views/Pedido/visualizar.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Bojo.iws" />
@@ -51,106 +40,47 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="PedidoModel.php" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/app/models/PedidoModel.php">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.6498258" vertical-offset="18" max-vertical-offset="1275">
-                    <caret line="28" column="9" selection-start-line="25" selection-start-column="7" selection-end-line="28" selection-end-column="9" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Bojo" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Producao.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Producao.php">
+      <file leaf-file-name="formformula.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/Formula/formformula.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.461538" vertical-offset="41" max-vertical-offset="2499">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.30278885" vertical-offset="1633" max-vertical-offset="2584">
+              <caret line="105" column="42" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="formproducao.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/Producao/formproducao.php">
+      <file leaf-file-name="FormulaDAO.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/data_access/FormulaDAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.730769" vertical-offset="766" max-vertical-offset="2771">
-              <caret line="63" column="38" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
-              <folding>
-                <marker date="1428636389139" expanded="true" signature="251:399" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="279:399" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="305:399" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="341:399" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="562:1125" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="1245:3289" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="1281:3289" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="1303:3289" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="1369:3289" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="1446:3289" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="1551:3036" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="1611:2997" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="1675:2954" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="1742:2907" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="1816:1900" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="1822:1895" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="2019:2173" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="2227:2494" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="2626:2856" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="3181:3289" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="3288:3289" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="7096:7655" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="8319:8908" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="8380:8877" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="8444:8588" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="8509:8575" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="8684:8842" placeholder="..." />
-                <marker date="1428636389139" expanded="true" signature="8690:8757" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="defaulttemplate.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/defaulttemplate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-37.923077" vertical-offset="0" max-vertical-offset="1921">
-              <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="formpedido.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/Pedido/formpedido.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31627056" vertical-offset="558" max-vertical-offset="2601">
-              <caret line="43" column="62" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+            <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="816">
+              <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="start.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/Producao/start.php">
+        <entry file="file://$PROJECT_DIR$/app/views/Formula/start.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="459">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="323">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormulaModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/FormulaModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.1538461" vertical-offset="812" max-vertical-offset="1343">
+              <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -164,22 +94,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/AjaxTeste.php" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/app/views/Cliente/start.php" />
-        <option value="$PROJECT_DIR$/app/views/AjaxLab/start.php" />
-        <option value="$PROJECT_DIR$/app/controllers/AjaxLab.php" />
-        <option value="$PROJECT_DIR$/app/models/AjaxLabModel.php" />
-        <option value="$PROJECT_DIR$/app/models/AjaxProdutoModel.php" />
-        <option value="$PROJECT_DIR$/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/app/controllers/AjaxProduto.php" />
         <option value="$PROJECT_DIR$/app/controllers/AjaxMateriaPrima.php" />
         <option value="$PROJECT_DIR$/app/models/AjaxMateriaPrimaModel.php" />
         <option value="$PROJECT_DIR$/app/views/Home/dashboard.php" />
         <option value="$PROJECT_DIR$/app/views/Home/start.php" />
-        <option value="$PROJECT_DIR$/app/controllers/AjaxCliente.php" />
-        <option value="$PROJECT_DIR$/app/views/AjaxCliente/start.php" />
-        <option value="$PROJECT_DIR$/app/views/Pedido/start.php" />
         <option value="$PROJECT_DIR$/app/core/Model.php" />
         <option value="$PROJECT_DIR$/app/dbc/DB.php" />
         <option value="$PROJECT_DIR$/app/helpers/Session.php" />
@@ -188,11 +107,7 @@
         <option value="$PROJECT_DIR$/app/helpers/Token.php" />
         <option value="$PROJECT_DIR$/app/init.php" />
         <option value="$PROJECT_DIR$/app/data_access/PedidoDAO.php" />
-        <option value="$PROJECT_DIR$/app/views/AjaxMateriaPrima/start.php" />
-        <option value="$PROJECT_DIR$/app/views/AjaxProduto/start.php" />
-        <option value="$PROJECT_DIR$/app/views/Pedido/visualizar.php" />
         <option value="$PROJECT_DIR$/app/data_access/PedidoDTO.php" />
-        <option value="$PROJECT_DIR$/js/custom.js" />
         <option value="$PROJECT_DIR$/app/data_access/PedidoProdutoDAO.php" />
         <option value="$PROJECT_DIR$/app/models/AjaxClienteModel.php" />
         <option value="$PROJECT_DIR$/app/controllers/PedidoProduto.php" />
@@ -201,7 +116,6 @@
         <option value="$PROJECT_DIR$/app/data_access/ProdutoDTO.php" />
         <option value="$PROJECT_DIR$/app/views/PedidoProduto/start.php" />
         <option value="$PROJECT_DIR$/app/core/DataAccessObject.php" />
-        <option value="$PROJECT_DIR$/app/controllers/Pedido.php" />
         <option value="$PROJECT_DIR$/app/controllers/PedProduto.php" />
         <option value="$PROJECT_DIR$/app/data_access/PedProdutoDAO.php" />
         <option value="$PROJECT_DIR$/app/data_access/PedProdutoDTO.php" />
@@ -209,12 +123,28 @@
         <option value="$PROJECT_DIR$/app/data_access/ProducaoDAO.php" />
         <option value="$PROJECT_DIR$/app/data_access/ProducaoDTO.php" />
         <option value="$PROJECT_DIR$/app/data_access/ProdutoDAO.php" />
-        <option value="$PROJECT_DIR$/app/views/defaulttemplate.php" />
-        <option value="$PROJECT_DIR$/app/models/ProducaoModel.php" />
         <option value="$PROJECT_DIR$/app/views/Producao/start.php" />
-        <option value="$PROJECT_DIR$/app/controllers/Producao.php" />
+        <option value="$PROJECT_DIR$/app/controllers/Pedido.php" />
+        <option value="$PROJECT_DIR$/app/views/Pedido/start.php" />
+        <option value="$PROJECT_DIR$/js/custom.js" />
+        <option value="$PROJECT_DIR$/app/views/Pedido/visualizar.php" />
         <option value="$PROJECT_DIR$/app/views/Pedido/formpedido.php" />
+        <option value="$PROJECT_DIR$/app/controllers/Producao.php" />
+        <option value="$PROJECT_DIR$/app/models/ProducaoModel.php" />
         <option value="$PROJECT_DIR$/app/views/Producao/formproducao.php" />
+        <option value="$PROJECT_DIR$/app/controllers/AjaxCliente.php" />
+        <option value="$PROJECT_DIR$/app/views/AjaxCliente/start.php" />
+        <option value="$PROJECT_DIR$/app/views/AjaxMateriaPrima/start.php" />
+        <option value="$PROJECT_DIR$/app/views/AjaxProduto/start.php" />
+        <option value="$PROJECT_DIR$/app/data_access/FormulaDTO.php" />
+        <option value="$PROJECT_DIR$/app/views/defaulttemplate.php" />
+        <option value="$PROJECT_DIR$/app/data_access/MateriaPrimaDAO.php" />
+        <option value="$PROJECT_DIR$/app/data_access/MateriaPrimaDTO.php" />
+        <option value="$PROJECT_DIR$/app/views/Formula/start.php" />
+        <option value="$PROJECT_DIR$/app/controllers/Formula.php" />
+        <option value="$PROJECT_DIR$/app/models/FormulaModel.php" />
+        <option value="$PROJECT_DIR$/app/data_access/FormulaDAO.php" />
+        <option value="$PROJECT_DIR$/app/views/Formula/formformula.php" />
       </list>
     </option>
   </component>
@@ -223,10 +153,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="683" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -251,6 +179,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -266,6 +195,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MRP-Bojo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bojo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MRP-Bojo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -341,7 +284,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Pedido" />
+              <option name="myItemId" value="Formula" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -401,7 +344,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -473,7 +415,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="0" y="0" width="683" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -482,7 +424,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2881997" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44622794" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -520,65 +462,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/datatables/js/dataTables.pt-br.lang">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5932202" vertical-offset="0" max-vertical-offset="476">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/datatables/js/dataTables.responsive.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.5862069" vertical-offset="0" max-vertical-offset="323">
-          <caret line="4" column="359" selection-start-line="4" selection-start-column="356" selection-end-line="4" selection-end-column="359" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/datatables/js/jquery.dataTables.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.2413793" vertical-offset="39038" max-vertical-offset="248642">
-          <caret line="2309" column="28" selection-start-line="2309" selection-start-column="21" selection-end-line="2309" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/datatables/js/jquery.dataTables.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.2413793" vertical-offset="312" max-vertical-offset="2703">
-          <caret line="31" column="233" selection-start-line="31" selection-start-column="226" selection-end-line="31" selection-end-column="233" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/respond.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12523021" vertical-offset="0" max-vertical-offset="543">
-          <caret line="4" column="2296" selection-start-line="4" selection-start-column="2293" selection-end-line="4" selection-end-column="2296" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/menu_treeview.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06115108" vertical-offset="0" max-vertical-offset="1275">
-          <caret line="2" column="57" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery-1.10.2.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09392265" vertical-offset="0" max-vertical-offset="543">
-          <caret line="3" column="186" selection-start-line="3" selection-start-column="183" selection-end-line="3" selection-end-column="186" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.inputmask.bundle.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="74" max-vertical-offset="1751">
-          <caret line="21" column="180" selection-start-line="21" selection-start-column="177" selection-end-line="21" selection-end-column="180" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/bootswatch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06115108" vertical-offset="0" max-vertical-offset="816">
@@ -656,60 +539,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AjaxCliente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.093235835" vertical-offset="442" max-vertical-offset="1105">
-          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/AjaxCliente/start.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4369287" vertical-offset="871" max-vertical-offset="3264">
-          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/AjaxMateriaPrima/start.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73126143" vertical-offset="620" max-vertical-offset="2652">
-          <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/AjaxProduto/start.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50639856" vertical-offset="1049" max-vertical-offset="3264">
-          <caret line="78" column="15" selection-start-line="78" selection-start-column="15" selection-end-line="78" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81654674" vertical-offset="12194" max-vertical-offset="12750">
-          <caret line="744" column="2" selection-start-line="744" selection-start-column="2" selection-end-line="744" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Pedido/visualizar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13396226" vertical-offset="48" max-vertical-offset="578">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/data_access/ClienteDTO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5913372" vertical-offset="1958" max-vertical-offset="2499">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AjaxMateriaPrima.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.0131826" vertical-offset="108" max-vertical-offset="1122">
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,7 +557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.1864405" vertical-offset="3294" max-vertical-offset="3825">
           <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -763,20 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/data_access/PedidoDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24701874" vertical-offset="59" max-vertical-offset="714">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/data_access/PedidoDTO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4633731" vertical-offset="0" max-vertical-offset="1887">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/core/DataTransferObject.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.096045196" vertical-offset="0" max-vertical-offset="531">
@@ -788,30 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="557">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Pedido/start.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9039548" vertical-offset="98" max-vertical-offset="697">
-          <caret line="39" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/data_access/ClienteDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.06985294" vertical-offset="259" max-vertical-offset="816">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/data_access/ProducaoDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="782">
-          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -819,107 +613,253 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4852941" vertical-offset="195" max-vertical-offset="782">
           <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/data_access/ProducaoDTO.php">
+    <entry file="file://$PROJECT_DIR$/app/views/Pedido/start.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.96139705" vertical-offset="888" max-vertical-offset="2210">
-          <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Pedido.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4017857" vertical-offset="1237" max-vertical-offset="2856">
-          <caret line="91" column="5" selection-start-line="56" selection-start-column="4" selection-end-line="91" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/ProducaoModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47678572" vertical-offset="243" max-vertical-offset="1292">
-          <caret line="35" column="60" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/PedidoModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6498258" vertical-offset="18" max-vertical-offset="1275">
-          <caret line="28" column="9" selection-start-line="25" selection-start-column="7" selection-end-line="28" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Producao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.461538" vertical-offset="41" max-vertical-offset="2499">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/defaulttemplate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-37.923077" vertical-offset="0" max-vertical-offset="1921">
-          <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Producao/formproducao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.730769" vertical-offset="766" max-vertical-offset="2771">
-          <caret line="63" column="38" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+        <state vertical-scroll-proportion="-19.115385" vertical-offset="183" max-vertical-offset="782">
+          <caret line="40" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <marker date="1428636389139" expanded="true" signature="251:399" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="279:399" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="305:399" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="341:399" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="562:1125" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="1245:3289" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="1281:3289" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="1303:3289" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="1369:3289" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="1446:3289" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="1551:3036" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="1611:2997" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="1675:2954" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="1742:2907" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="1816:1900" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="1822:1895" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="2019:2173" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="2227:2494" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="2626:2856" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="3181:3289" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="3288:3289" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="7096:7655" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="8319:8908" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="8380:8877" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="8444:8588" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="8509:8575" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="8684:8842" placeholder="..." />
-            <marker date="1428636389139" expanded="true" signature="8690:8757" placeholder="..." />
+            <element signature="e#6#86#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Producao/start.php">
+    <entry file="file://$PROJECT_DIR$/app/views/Pedido/visualizar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="459">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5517891" vertical-offset="30" max-vertical-offset="561">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data_access/PedidoDTO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.96875" vertical-offset="1343" max-vertical-offset="1887">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data_access/PedidoDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0625" vertical-offset="170" max-vertical-offset="714">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/Pedido/formpedido.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31627056" vertical-offset="558" max-vertical-offset="2601">
-          <caret line="43" column="62" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+        <state vertical-scroll-proportion="-1.9615384" vertical-offset="697" max-vertical-offset="2482">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/AjaxCliente/start.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8069498" vertical-offset="857" max-vertical-offset="3264">
+          <caret line="75" column="210" selection-start-line="75" selection-start-column="210" selection-end-line="75" selection-end-column="210" />
+          <folding>
+            <marker date="1428698136408" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1428698136408" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1428698136408" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/AjaxProduto/start.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29943502" vertical-offset="810" max-vertical-offset="3264">
+          <caret line="57" column="75" selection-start-line="57" selection-start-column="75" selection-end-line="57" selection-end-column="75" />
+          <folding>
+            <marker date="1428698743832" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1428698743832" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/AjaxMateriaPrima/start.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8173258" vertical-offset="1730" max-vertical-offset="2652">
+          <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+          <folding>
+            <marker date="1428698576043" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1428698576043" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.992819" vertical-offset="11706" max-vertical-offset="12750">
+          <caret line="525" column="39" selection-start-line="525" selection-start-column="39" selection-end-line="525" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AjaxCliente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.25047082" vertical-offset="558" max-vertical-offset="1105">
+          <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="52" />
+          <folding>
+            <marker date="1428697819410" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1428697819410" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1428697819410" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/defaulttemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5254237" vertical-offset="656" max-vertical-offset="1921">
+          <caret line="55" column="56" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data_access/ClienteDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8841567" vertical-offset="161" max-vertical-offset="816">
+          <caret line="45" column="5" selection-start-line="8" selection-start-column="17" selection-end-line="45" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data_access/MateriaPrimaDTO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2730696" vertical-offset="0" max-vertical-offset="1836">
+          <caret line="76" column="21" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data_access/ClienteDTO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85519594" vertical-offset="1844" max-vertical-offset="2499">
+          <caret line="143" column="0" selection-start-line="8" selection-start-column="17" selection-end-line="143" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Producao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.85365856" vertical-offset="1612" max-vertical-offset="2499">
+          <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/Producao/start.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.375" vertical-offset="0" max-vertical-offset="544">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Formula.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.0734463" vertical-offset="0" max-vertical-offset="2482">
+          <caret line="101" column="58" selection-start-line="101" selection-start-column="58" selection-end-line="101" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Pedido.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14808363" vertical-offset="0" max-vertical-offset="2890">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data_access/MateriaPrimaDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76836157" vertical-offset="0" max-vertical-offset="799">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data_access/FormulaDTO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.15625" vertical-offset="1326" max-vertical-offset="1870">
+          <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data_access/ProducaoDTO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.6797274" vertical-offset="425" max-vertical-offset="2210">
+          <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data_access/ProducaoDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32197616" vertical-offset="100" max-vertical-offset="782">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/ProducaoModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.923077" vertical-offset="494" max-vertical-offset="1292">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="28" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/Formula/start.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="323">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/FormulaModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1538461" vertical-offset="812" max-vertical-offset="1343">
+          <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/PedidoModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.86585367" vertical-offset="701" max-vertical-offset="1275">
+          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data_access/FormulaDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="816">
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/Producao/formproducao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2880733" vertical-offset="980" max-vertical-offset="2720">
+          <caret line="131" column="68" selection-start-line="131" selection-start-column="51" selection-end-line="131" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/Formula/formformula.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30278885" vertical-offset="1633" max-vertical-offset="2584">
+          <caret line="105" column="42" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
           <folding />
         </state>
       </provider>

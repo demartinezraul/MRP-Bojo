@@ -28,7 +28,7 @@ class AjaxCliente extends Controller {
                 <span id=\"cli_{$return['id_cliente']}\">
                     {$return['nome']}  {$return['email']}  {$return['telefone']}
                 </span>
-                <a href=\"#\" class=\"btn btn-danger btn-sm pull-right delete_cliente\" data-delclienteid=\"{$return['id_cliente']}\" data-toggle=\"modal\" data-target=\"#apagaItemModal\"><i class=\"fa fa-trash-o\"></i></a>
+                <a href=\"#\" class=\"btn btn-danger btn-sm pull-right delete_cliente\" data-delclienteid=\"{$return['id_cliente']}\" data-toggle=\"modal\" data-target=\"#apagaItemModal\">DELETAR<i class=\"fa fa-trash-o\"></i></a>
                 <a href=\"#\" class=\"btn btn-primary btn-sm pull-right update_cliente\" id=\"{$return['id_cliente']}\" data-toggle=\"modal\" data-target=\"#atualizaItemModal\"><i class=\"fa fa-edit\"></i></a>
               </li>";
     }

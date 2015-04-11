@@ -62,6 +62,7 @@ class Pedido extends Controller
             /** @var PedidoDTO */
             $pedidoarr = $this->findById($id);
 
+            $producao = (new ProducaoModel())->getProducaoPedido($id);
             //Formatação de datas
 
             if ($pedidoarr->getDataPedido()) {
@@ -72,6 +73,7 @@ class Pedido extends Controller
                 'pagetitle' => '',
                 'pagesubtitle' => '',
                 'cliente' => $cliente,
+                'producao' => $producao,
                 'id' => $id,
                 'pedido' => $pedidoarr,
             );

@@ -1,8 +1,8 @@
 <?php
 
-$producao = $data['producao'];
-$producao_form = new Producao();
-$cadastrado = $producao_form->cadastra($producao); //Não cadastra na entra pois ainda não tem Token
+$formula = $data['formula'];
+$formula_form = new Formula();
+$cadastrado = $formula_form->cadastra($formula); //Não cadastra na entra pois ainda não tem Token
 
 $id_check = $data['id'];
 
@@ -42,7 +42,7 @@ $token = Token::generate();
                                     <div class="jumbotron">
                                         <div class="container">
                                             <div class="col-md-8">
-                                                <p>Cadastro de pedido produto finalizado</p>
+                                                <p>Formula Cadastrada</p>
                                                 <a href="Home" class="btn btn-info" role="button">
                                                     <i class="glyphicons glyphicons-remove-2"></i> VOLTAR
                                                 </a>
@@ -51,7 +51,7 @@ $token = Token::generate();
                                     </div>
                                 </div>
                             <?php else: ?>
-                            <form id="form_producao" class="form-horizontal" method="post" action=""
+                            <form id="form_formula" class="form-horizontal" method="post" action=""
                                   enctype="multipart/form-data">
                                 <fieldset>
                                     <div class="col-md-4">
@@ -62,10 +62,10 @@ $token = Token::generate();
                                                 <select class="form-control" id="id_produto" name="id_produto">
                                                     <option value="">-- Selecione Produto</option>
                                                     <?php //echo escape(Input::get('id_cliente'));
-                                                    $producao->setIdProduto($producao->getIdProduto() == '' ? Input::get('id_produto') : $producao->getIdProduto());
+                                                    $formula->setIdProduto($formula->getIdProduto() == '' ? Input::get('id_produto') : $formula->getIdProduto());
                                                     foreach ($data['produto'] as $produto) {
 
-                                                        if ($produto->getIdProduto() == $producao->getIdProduto()) {
+                                                        if ($produto->getIdProduto() == $formula->getIdProduto()) {
                                                             echo '<option value="' . $produto->getIdProduto() . '" selected>' . $produto->getDescricao() . '</option>';
                                                         } else {
                                                             echo '<option value="' . $produto->getIdProduto() . ' ">' . $produto->getDescricao() . '</option>';
@@ -75,18 +75,18 @@ $token = Token::generate();
                                                 </select>
                                             </div>
                                             <div class="col-sm-12 selectContainer">
-                                                <label for="id_pedido" class="control-label">Codigo do Pedido</label>
+                                                <label for="id_materia_prima" class="control-label">Materia prima</label>
 
-                                                <select class="form-control" id="id_pedido" name="id_pedido">
-                                                    <option value="">-- Selecione Codigo Pedido</option>
+                                                <select class="form-control" id="id_materia_prima" name="id_materia_prima">
+                                                    <option value="">-- Selecione Materia Prima</option>
                                                     <?php //echo escape(Input::get('id_cliente'));
-                                                    $producao->setIdPedido($producao->getIdPedido() == '' ? Input::get('id_pedido') : $producao->getIdPedido());
-                                                    foreach ($data['pedido'] as $pedido) {
+                                                    $formula->setIdMateriaPrima($formula->getIdMateriaPrima() == '' ? Input::get('id_materia_prima') : $formula->getIdMateriaPrima());
+                                                    foreach ($data['materiaprima'] as $materiaprima) {
 
-                                                        if ($pedido->getIdPedido() == $producao->getIdPedido()) {
-                                                            echo '<option value="' . $pedido->getIdPedido() . '" selected>' . $pedido->getIdPedido() . '</option>';
+                                                        if ($materiaprima->getIdMateriaPrima() == $formula->getIdMateriaPrima()) {
+                                                            echo '<option value="' . $materiaprima->getIdMateriaPrima() . '" selected>' . $materiaprima->getDescricao() . '</option>';
                                                         } else {
-                                                            echo '<option value="' . $pedido->getIdPedido() . ' ">' . $pedido->getIdPedido() . '</option>';
+                                                            echo '<option value="' . $materiaprima->getIdMateriaPrima() . ' ">' . $materiaprima->getDescricao() . '</option>';
                                                         }
                                                     }
                                                     ?>
@@ -97,17 +97,9 @@ $token = Token::generate();
                                                     <label for="quantidade" class="control-label">Quantidade</label>
 
 
-                                                    <input type="text" class="form-control" id="quantidade" name="quantidade"
-                                                           value="<?php echo $producao->getQuantidade() == '' ? Input::get('quantidade') : $producao->getQuantidade(); ?>">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-12 inputGroupContainer">
-                                                    <label for="valorunitario" class="control-label">Valor Unitario</label>
-
-
-                                                    <input type="text" class="form-control" id="valorunitario" name="valorunitario"
-                                                           value="<?php echo $producao->getValorunitario() == '' ? Input::get('valorunitario') : $producao->getValorunitario(); ?>">
+                                                    <input type="text" class="form-control" id="quantidade"
+                                                           name="quantidade"
+                                                           value="<?php echo $formula->getQuantidade() == '' ? Input::get('quantidade') : $formula->getQuantidade(); ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -129,12 +121,12 @@ $token = Token::generate();
                                     </div>
                                     -->
                         </div>
-                        <input type="hidden" name="id_pedido_produto" value="<?php echo $data['id'];?>">
+                        <input type="hidden" name="id_formula" value="<?php echo $data['id']; ?>">
                         <input type="hidden" name="token" value="<?php echo $token; ?>">
 
                         <div class="form-group">
                             <div class="col-lg-12 clearfix">
-                                <a href="Producao" id="cancel"
+                                <a href="Formula" id="cancel"
                                    class="btn btn-default"><span
                                         class="fa fa-undo"></span> Cancelar</a>
                                 <button type="submit" name="cadastrar" class="btn btn-primary"><span

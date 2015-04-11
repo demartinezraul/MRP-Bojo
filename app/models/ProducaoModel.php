@@ -27,9 +27,14 @@ class ProducaoModel extends Model{
         if($this->dto->getIdProduto()){
             $produto = (new ProdutoDAO())->getById($this->dto->getIdProduto())->getDescricao();
         }
+        $pedido = '';
+        if($this->dto->getIdPedido()){
+            $pedido = (new PedidoDAO())->getById($this->dto->getIdPedido())->getIdPedido();
+        }
         return array(
             'id_pedido_cliente' => $this->dto->getIdPedidoProduto(),
             'id_pedido' => $this->dto->getIdPedido(),
+            'pedido' => $pedido,
             'id_produto' => $this->dto->getIdProduto(),
             'produto' => $produto,
             'quantidade' => $this->dto->getQuantidade(),
@@ -37,19 +42,14 @@ class ProducaoModel extends Model{
         );
     }
 
-    public function getProducao()
+    public function getProducaoPedido($id)
     {
-        $_POST = filter_input_array(INPUT_POST);
-        $nome = Input::get('id_pedido_produto');
-        $pessoas = $this->dao->get("id_pedido_produto ilike '%{$nome}%' order by id_pedido_produto limit 5");
-
-        $resultado = array();
-
-        foreach ($pessoas as $pessoa) {
-            $resultado[] = $this->setDTO($pessoa)->getBasicInfo();
+        $producao = $this->dao->get("id_pedido = {$id}");
+        $lista = array();
+        foreach ($producao as $prod) {
+            $lista[] = $this->setDTO($prod)->getArrayDados();
         }
-
-        return $resultado;
+        return $lista;
     }
 
     public function getBasicInfo()

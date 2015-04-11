@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="form-group col-sm-12">
-                    <input type="reset" name="reset" class="btn btn-success" id="reset" value="Limpar">
+                    <input type="reset" name="reset" class="btn btn-default" id="reset" value="Limpar">
                     <input type="submit" name="cadastrar" class="btn btn-primary" id="cadastrar" value="Cadastrar">
                     <input type="hidden" name="token" value="">
                 </div>

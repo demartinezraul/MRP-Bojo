@@ -7,9 +7,9 @@
                 </small>
 
 
-                <!-- Botões de administração --
+                <!-- Botões de administração -->
                 <span class="btn-panel pull-right">
-                <a href="Pedido/formpedido/<?php echo $data['id_pedido']; ?>"
+                <a href="Pedido/formpedido/<?php echo $data['dados_pessoais']['id_pedido']; ?>"
                    data-toggle="tooltip" data-placement="top" title="Editar Perfil!"
                    class="btn btn-primary btn-circle btn-lg">
                     <i class="fa fa-pencil"></i>
@@ -18,7 +18,6 @@
                    class="btn btn-default btn-circle btn-lg">
                     <i class="fa fa-list"></i>
                 </a>
-                -->
                 <!-- Fim Botões de administração -->
 
             </h3>
